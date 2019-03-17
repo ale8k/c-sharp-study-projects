@@ -5,9 +5,8 @@ namespace Constructors
     {
         static void Main(string[] args)
         {
-            var car = new Car("XYZ1234");
-
-
+            var car = new Car("XYZ1234", "idk");
+            System.Console.ReadLine();
         }
     }
 }
