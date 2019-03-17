@@ -15,15 +15,20 @@ namespace EnergyBillApp
                                        currentUsageRate: 789.000m,
                                        fuelAdjustRate: 2);
 
+            alex.PremisesNum = 30;
+            alex.AccountNum = 1;
+            alex.AccountName = "Alex lol";
+            alex.AccountAddress = "123 fairy land lul";
+
             alex.Pay(new Payment(50, DateTime.Now));
             alex.Pay(new Payment(400, DateTime.Now));
 
             BillCalc alexsCalc = new BillCalc(alex, 9.660m);
+
             Logger alexsLogger = new Logger(alexsCalc);
+
             alexsLogger.LogBill();
 
-            DateTime x = DateTime.Now;
-            Console.WriteLine(x.ToShortDateString());
 
             Console.ReadLine();
             
