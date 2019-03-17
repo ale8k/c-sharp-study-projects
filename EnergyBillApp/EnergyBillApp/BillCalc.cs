@@ -12,7 +12,7 @@ namespace EnergyBillApp
         public decimal FeAdjust { get; private set; }
         public decimal TotalChargesBeforeTax { get; private set; }
         public decimal NontaxableCharges { get; private set; }
-        public Account Account { get; set; }
+        public Account Account { get; private set; }
 
         private decimal _taxableCharges;
         

@@ -14,6 +14,7 @@ namespace EnergyBillApp
         public string AccountCreationDate { get; private set; }
         public List<Payment> PaymentHistory = new List<Payment>();
         public Payment LatestPayment { get; private set; }
+        // balance? need someway to store balance for account...
 
         private int _premisesNum, _accNum;
         private string _accName, _accAddress;
@@ -32,7 +33,7 @@ namespace EnergyBillApp
         {
             get { return _premisesNum; }
 
-            private set
+            set
             {
                 if (value.GetType() != typeof(Int32))
                 {
@@ -56,9 +57,10 @@ namespace EnergyBillApp
         {
             get { return _accNum; }
 
-            private set
+            set
             {
                 int myVal = value;
+
 
                 if (myVal <= 0)
                 {
@@ -75,25 +77,38 @@ namespace EnergyBillApp
         {
             get { return _accName; }
 
-            private set
+            set
             {
-               
-
+                if (value.Length >= 3 && value.GetType() == typeof(string))
+                {
+                    _accName = value;
+                }
+                else
+                {
+                    throw new InvalidOperationException("Account name cannot be 2 in length or below (i.e., a single character)");
+                }
             }
 
         }
 
+        /*
+         * TODO: Create validation formatter for address
+         */
         public string AccountAddress
         {
             get { return _accAddress; }
 
-            private set
+            set
             {
                 string myVal = Convert.ToString(value);
 
                 if (myVal.Length <= 3)
                 {
                     throw new InvalidOperationException("Account address cannot be 3 in length or below");
+                }
+                else
+                {
+                    _accAddress = myVal;
                 }
             }
         }
