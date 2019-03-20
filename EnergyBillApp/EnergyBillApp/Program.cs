@@ -1,8 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+/*
+ * 
+ * Create an account from <Account>
+ * Create a bill calculator for that account <BillCalc> and pass it an adjustment
+ * Use the logger <Logger> to display the account details or alternatively access all public members manually.
+ * 
+ */
 
 namespace EnergyBillApp
 {
@@ -10,26 +14,38 @@ namespace EnergyBillApp
     {
         static void Main(string[] args)
         {
-            Account alex = new Account(currentReading: 5735,
-                                       previousReading: 5556,
-                                       currentUsageRate: 789.000m,
-                                       fuelAdjustRate: 2);
+            // move all this logic to a class, AccountCreaterLogger
+            Console.WriteLine("Enter current reading:");
+            int currReading = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter previous reading:");
+            int prevReading = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter current usage rate:");
+            decimal currUsageRate = Convert.ToDecimal(Console.ReadLine());
+            Console.WriteLine("Enter fuel adjust rate:");
+            int fuelAdjust = Convert.ToInt32(Console.ReadLine());
 
-            alex.PremisesNum = 30;
-            alex.AccountNum = 1;
-            alex.AccountName = "Alex lol";
-            alex.AccountAddress = "123 fairy land lul";
+            Account alex = new Account(currentReading: currReading,
+                                       previousReading: prevReading,
+                                       currentUsageRate: currUsageRate,
+                                       fuelAdjustRate: fuelAdjust);
 
-            alex.Pay(new Payment(50, DateTime.Now));
-            alex.Pay(new Payment(400, DateTime.Now));
+            Console.WriteLine("Enter premises number or press return:");
+            alex.PremisesNum = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter account number or press return:");
+            alex.AccountNum = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter account name or press return:");
+            alex.AccountName = Console.ReadLine();
+            Console.WriteLine("Enter account address or press return:");
+            alex.AccountAddress = Console.ReadLine();
+            Console.WriteLine();
 
-            BillCalc alexsCalc = new BillCalc(alex, 9.660m);
+            alex.Pay(new Payment(50, DateTime.Now)); // pays value into account
+            alex.Pay(new Payment(400, DateTime.Now)); // ""
 
-            Logger alexsLogger = new Logger(alexsCalc);
+            BillCalc alexsCalc = new BillCalc(alex, 9.660m); // Creates bill calculator for Account object
+            Logger alexsLogger = new Logger(alexsCalc); // Logs all calculated values 
 
             alexsLogger.LogBill();
-
-
             Console.ReadLine();
             
         }
