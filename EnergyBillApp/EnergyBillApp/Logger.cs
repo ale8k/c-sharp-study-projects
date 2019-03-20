@@ -14,33 +14,27 @@ namespace EnergyBillApp
         public void LogBill()
         {
             StringBuilder sb = new StringBuilder();
+            sb
+                .Append($"Account name: {_billCalc.Account.AccountName}").AppendLine()
+                .Append($"Account address: {_billCalc.Account.AccountAddress}").AppendLine()
+                .Append($"Account number: {_billCalc.Account.AccountNum}").AppendLine()
+                .Append($"Premises number: {_billCalc.Account.PremisesNum}").AppendLine()
+                .Append($"Account creation date: {_billCalc.Account.AccountCreationDate}").AppendLine()
+                .Append($"Current reading: {_billCalc.Account.CurrentReading}").AppendLine()
+                .Append($"Previous reading: {_billCalc.Account.PreviousReading}").AppendLine()
+                .Append($"Current usage rate: {_billCalc.Account.CurrentUsageRate}").AppendLine()
+                .Append($"Fuel adjustment rate: {_billCalc.Account.FuelAdjustmentRate}").AppendLine()
+                .Append($"Latest payment of {_billCalc.Account.LatestPayment.PaymentAmount} was at {_billCalc.Account.LatestPayment.DatePayed.ToShortDateString()}").AppendLine()
+                .Append($"Current charges: {_billCalc.CurrentCharges}").AppendLine()
+                .Append($"Subtotal: {_billCalc.Subtotal}").AppendLine()
+                .Append($"Subtotal: {_billCalc.Subtotal}").AppendLine()
+                .Append($"F/E adjust: {_billCalc.FeAdjust}").AppendLine()
+                .Append($"Total charges before tax: {_billCalc.TotalChargesBeforeTax}").AppendLine()
+                .Append($"Nontaxable charges: {_billCalc.NontaxableCharges}").AppendLine()
+                .Append($"Taxable charges: {_billCalc.TaxableCharges}").AppendLine();
 
+            Console.WriteLine(sb);
 
-            //_billCalc.Account // get all account details from here
-            // make string builder for account
-            Console.WriteLine($"Account name: {_billCalc.Account.AccountName}");
-            Console.WriteLine($"Account address: {_billCalc.Account.AccountAddress}");
-            Console.WriteLine($"Account number: {_billCalc.Account.AccountNum}");
-            Console.WriteLine($"Premises number: {_billCalc.Account.PremisesNum}");
-            Console.WriteLine($"Account creation date: {_billCalc.Account.AccountCreationDate}");
-
-            Console.WriteLine();
-
-            Console.WriteLine($"Current reading: {_billCalc.Account.CurrentReading}");
-            Console.WriteLine($"Previous reading: {_billCalc.Account.PreviousReading}");
-            Console.WriteLine($"Current usage rate: {_billCalc.Account.CurrentUsageRate}");
-            Console.WriteLine($"Fuel adjustment rate: {_billCalc.Account.FuelAdjustmentRate}");
-            Console.WriteLine($"Latest payment of {_billCalc.Account.LatestPayment.PaymentAmount} was at {_billCalc.Account.LatestPayment.DatePayed.ToShortDateString()}");
-
-            Console.WriteLine();
-                
-            Console.WriteLine($"Current charges: {_billCalc.CurrentCharges}");
-            Console.WriteLine($"Subtotal: {_billCalc.Subtotal}");
-            Console.WriteLine($"Fuel & IPP charge: {_billCalc.FiCharge}");
-            Console.WriteLine($"F/E adjust: {_billCalc.FeAdjust}");
-            Console.WriteLine($"Total charges before tax: {_billCalc.TotalChargesBeforeTax}");
-            Console.WriteLine($"Nontaxable charges: {_billCalc.NontaxableCharges}");
-            Console.WriteLine($"Taxable charges: {_billCalc.TaxableCharges}");
             
         }
     }
