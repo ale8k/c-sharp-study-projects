@@ -14,7 +14,7 @@ namespace EnergyBillApp
     {
         static void Main(string[] args)
         {
-            // move all this logic to a class, AccountCreaterLogger
+
             Console.WriteLine("Enter current reading:");
             int currReading = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter previous reading:");
