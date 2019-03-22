@@ -35,9 +35,14 @@ namespace Design_a_Stack
 
         public object Pop()
         {
-            object returnObject = _stackList[_stackList.Count - 1];
-            _stackList.RemoveAt(_stackList.Count - 1);
-            return returnObject;
+            if (Length >= 1)
+            {
+                object returnObject = _stackList[_stackList.Count - 1];
+                _stackList.RemoveAt(_stackList.Count - 1);
+                return returnObject;
+            }
+            else
+                throw new InvalidOperationException("Cannot remove element from Stack size: 0");
         }
 
         public void Clear()
