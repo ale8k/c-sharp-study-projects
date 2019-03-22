@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Design_a_Stack
 {
@@ -18,7 +14,7 @@ namespace Design_a_Stack
             newStack.Push(3);
             newStack.Push(2);
             newStack.Push(1);
-            newStack.Pop();
+            newStack.Clear();
 
             for (int i = 0; i < newStack.Length; i++)
             {

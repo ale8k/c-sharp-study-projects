@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Design_a_Stack
 {
@@ -11,9 +12,6 @@ namespace Design_a_Stack
             _stackList = new List<object>();
         }
 
-        /*
-         * Class indexer
-         */
         public object this[int i]
         {
             get
@@ -22,25 +20,19 @@ namespace Design_a_Stack
             }
         }
 
-        /*
-         * Length prop for own indexer Stack
-         */
         public int Length
         {
             get { return _stackList.Count; }
         }
 
-        /*
-         * Add element to start
-         */
         public void Push(object obj)
         {
-            _stackList.Insert(0, obj);
+            if(obj is null)
+                throw new InvalidOperationException("Null is an invalid value for type Stack");
+            else
+                _stackList.Insert(0, obj);
         }
 
-        /*
-         * Remove element from end / store it in a variable if you wish
-         */
         public object Pop()
         {
             object returnObject = _stackList[_stackList.Count - 1];
@@ -48,9 +40,19 @@ namespace Design_a_Stack
             return returnObject;
         }
 
-        void Clear()
+        public void Clear()
         {
-
+            if(Length >= 1)
+            {
+                while (Length >= 1)
+                {
+                    _stackList.RemoveAt(0);
+                }
+            }
+            else
+            {
+                throw new InvalidOperationException("Cannot clear an empty Stack");
+            }
         }
 
     }
