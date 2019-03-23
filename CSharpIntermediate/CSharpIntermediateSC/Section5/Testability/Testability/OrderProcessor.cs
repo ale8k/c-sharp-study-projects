@@ -4,11 +4,11 @@ namespace Testability
 {
     public class OrderProcessor
     {
-        private readonly IShippingCalculator _shippingCalculator;
+        private readonly ShippingCalculator _shippingCalculator;
 
-        public OrderProcessor(IShippingCalculator shippingCalculator)
+        public OrderProcessor()
         {
-            _shippingCalculator = shippingCalculator;
+            _shippingCalculator = new ShippingCalculator();
         }
 
         public void Process(Order order)
