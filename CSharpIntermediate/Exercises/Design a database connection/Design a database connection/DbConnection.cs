@@ -2,23 +2,25 @@
 
 namespace Design_a_database_connection
 {
-    public class DbConnection
+    public abstract class DbConnection
     {
 
-        private string _connectionString;
         private TimeSpan timeout;
 
         public DbConnection(string connectionString)
         {
-            _connectionString = ConnectionStringValidator(connectionString);
+            ConnectionStringValidator(connectionString);
         }
 
-        private string ConnectionStringValidator(string connString)
+        private void ConnectionStringValidator(string connString)
         {
             if (connString is null || connString.Length == 0)
                 throw new ArgumentException("Connection string cannot be null or empty");
-            else
-                return connString;
         }
+
+        public abstract void OpenDbConnection();
+        public abstract void CloseDbConnection();
     }
 }
+
+
