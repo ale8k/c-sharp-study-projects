@@ -26,6 +26,7 @@ namespace Testability.UnitTests
             Assert.IsTrue(y.IsShipped);
             Assert.AreEqual(1, y.Shipment.Cost);
             Assert.AreEqual(DateTime.Today.AddDays(1), y.Shipment.ShippingDate);
+           
         }
     }
 
