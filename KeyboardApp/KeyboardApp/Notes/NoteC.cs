@@ -14,7 +14,7 @@ namespace KeyboardApp.Notes
 
         public void Play()
         {
-            Console.Beep(32000, 100000);
+            Console.Beep(2000, 100000);
         }
     }
 }
