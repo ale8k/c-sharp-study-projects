@@ -13,5 +13,8 @@ namespace LambdaExpressions
                 new Book() {Title = "Title 3", Price = 17}
             };
         }
+
+        public delegate void Lol(string i);
+        public delegate ReturnType Hi<N, ReturnType>(N n, ReturnType t);
     }
 }

@@ -9,12 +9,17 @@ namespace LambdaExpressions
         {
             var books = new BookRepository().GetBooks();
 
-            var cheapBooks = books.FindAll(b => b.Price < 10);
+            Func<Book, bool> x = b => b.Price < 10;
+            Predicate<Book> y = b => b.Price < 10;
+
+            var cheapBooks = books.FindAll(y);
 
             foreach (var book in cheapBooks)
             {
                 Console.WriteLine(book.Title);
             }
+
+            Console.ReadLine();
 
         }
     }
