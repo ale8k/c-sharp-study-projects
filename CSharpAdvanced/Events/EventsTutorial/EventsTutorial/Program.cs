@@ -7,9 +7,8 @@ namespace EventsTutorial
         static void Main(string[] args)
         {
             Video video = new Video();
-            video.Title = "My video 1";
-
             VideoEncoder videoEncoder = new VideoEncoder();
+            video.Title = "My video 1";
 
             videoEncoder.Encode(video);
             Console.ReadLine();
