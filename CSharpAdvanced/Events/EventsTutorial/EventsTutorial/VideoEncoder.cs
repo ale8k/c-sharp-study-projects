@@ -13,8 +13,9 @@ namespace EventsTutorial
          */
 
         // no idea why we send object:src, event args makes sense
-        public delegate void VideoEncodedEventHandler(object src, EventArgs args, string L); 
-        public event VideoEncodedEventHandler VideoEncoded;
+        //public delegate void VideoEncodedEventHandler(object src, VideoEventArgs args, string L); 
+        //public event VideoEncodedEventHandler VideoEncoded;
+        public event EventHandler<VideoEventArgs> VideoEncoded; // e. param?
         
 
         public void Encode(Video video)
@@ -22,13 +23,13 @@ namespace EventsTutorial
             Console.WriteLine("Encoding video...");
             Thread.Sleep(3000);
 
-            OnVideoEncoded();
+            OnVideoEncoded(video);
         }
 
-        protected virtual void OnVideoEncoded()
+        protected virtual void OnVideoEncoded(Video video)
         {
             if (VideoEncoded != null)
-                VideoEncoded(this, EventArgs.Empty, "I am from the events first invokate param :)");
+                VideoEncoded(this, new VideoEventArgs() { Video = video });
             
         }
     }

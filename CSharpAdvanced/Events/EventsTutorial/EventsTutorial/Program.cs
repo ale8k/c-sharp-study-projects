@@ -14,8 +14,10 @@ namespace EventsTutorial
 
             VideoEncoder videoEncoder = new VideoEncoder();
             MailService mailService = new MailService();
+            MessageService messageService = new MessageService();
 
             videoEncoder.VideoEncoded += mailService.OnVideoEncoded;
+            videoEncoder.VideoEncoded += messageService.OnVideoEncoded;
             videoEncoder.Encode(video);
 
             // delegate reminder, nothing to do with events

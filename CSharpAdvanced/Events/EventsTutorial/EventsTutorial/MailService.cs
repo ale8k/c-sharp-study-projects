@@ -7,9 +7,9 @@ namespace EventsTutorial
         /*
          * Event handler method
          */
-        public void OnVideoEncoded(object src, EventArgs args, string L)
+        public void OnVideoEncoded(object src, VideoEventArgs args)
         {
-            Console.WriteLine("MailService: Sending mail..." + L);
+            Console.WriteLine("MailService: Sending mail..." + args.Video.Title);
         }
 
         // delegate reminder stuff, ignore if thinking about events
