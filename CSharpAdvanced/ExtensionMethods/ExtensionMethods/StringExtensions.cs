@@ -20,5 +20,10 @@ namespace System
 
             return string.Join(" ", words.Take(numberOfWords)) + "...";
         }
+
+        public static char LastChar(this string str)
+        {
+            return str[str.Length - 1];
+        }
     }
 }

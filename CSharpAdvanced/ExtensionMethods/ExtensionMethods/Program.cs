@@ -17,7 +17,10 @@ namespace ExtensionMethods
             var max = numbers.Max();
 
             Console.WriteLine(max);
-
+            char x = post.LastChar();
+            Console.WriteLine(x);
+            Console.ReadLine();
+            
         }
     }
 }
