@@ -1,5 +1,4 @@
-﻿
-namespace Linq
+﻿namespace Linq
 {
     public class Book
     {

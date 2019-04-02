@@ -8,15 +8,17 @@ namespace Linq
     {
         static void Main(string[] args)
         {
-            
-            Func<int, int, int> add = (a, b) => a + b;
-            Console.WriteLine(add(2, 3));
+            var books = new BookRepository().GetBooks();
+            IEnumerable<Book> cheapBooks = books.Where(b => b.Price < 10);
+
+            foreach(Book book in cheapBooks)
+            {
+                Console.WriteLine($"{book.Title}: {book.Price}");
+            }
+            Console.ReadLine();
         }
 
-        private static float CalculateDiscount(float price)
-        {
-            return 0;
-        }
+
 
     
     }
