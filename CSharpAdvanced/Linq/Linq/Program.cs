@@ -9,17 +9,21 @@ namespace Linq
         static void Main(string[] args)
         {
             var books = new BookRepository().GetBooks();
-            IEnumerable<Book> cheapBooks = books.Where(b => b.Price < 10).;
+            Book book = books.Single(b => b.Title == "ASP.NET MVC");
 
-            foreach(Book book in cheapBooks)
-            {
-                Console.WriteLine($"{book.Title}: {book.Price}");
-            }
+            // LINQ Query operators
+            IEnumerable<Book> cheaperBooks =  from b in books
+                                                where b.Price < 10
+                                                orderby b.Title
+                                                select b;
+
+            // Extension LINQ methods
+            IEnumerable<string> cheapBooks = books
+                                                .Where(b => b.Price < 10)
+                                                .OrderBy(b => b.Title)
+                                                .Select(b => b.Title);
+
             Console.ReadLine();
         }
-
-
-
-    
     }
 }
