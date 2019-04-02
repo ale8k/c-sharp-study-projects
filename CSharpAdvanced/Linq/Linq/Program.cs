@@ -9,7 +9,7 @@ namespace Linq
         static void Main(string[] args)
         {
             var books = new BookRepository().GetBooks();
-            IEnumerable<Book> cheapBooks = books.Where(b => b.Price < 10);
+            IEnumerable<Book> cheapBooks = books.Where(b => b.Price < 10).;
 
             foreach(Book book in cheapBooks)
             {
