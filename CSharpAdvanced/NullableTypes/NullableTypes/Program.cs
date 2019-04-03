@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 
 namespace NullableTypes
 {
@@ -7,8 +6,10 @@ namespace NullableTypes
     {
         static void Main(string[] args)
         {
+            int? y = null;
+
             DateTime? date = null;
-            DateTime date2 = date ?? DateTime.Today;
+            DateTime date2 = date ?? DateTime.Today; // default || today
 
             DateTime date3 = (date != null) ? date.GetValueOrDefault() : DateTime.Today;
 
