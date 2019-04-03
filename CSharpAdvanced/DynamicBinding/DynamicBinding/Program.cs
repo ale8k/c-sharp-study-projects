@@ -5,9 +5,13 @@ namespace DynamicBinding
     {
         static void Main(string[] args)
         {
-            int i = 5;
-            dynamic d = i;
-            long l = d;
+            object obj = "aledx";
+
+            var methodInfo = obj.GetType().GetMethod("GetHashCode");
+            methodInfo.Invoke(null, null);
+
+            dynamic lol = "bob";
+            lol.Hi();
         }
     }
 }
