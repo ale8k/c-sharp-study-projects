@@ -1,6 +1,6 @@
-﻿
-using System;
-using System.IO;
+﻿using System;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace ExceptionHandling
 {
@@ -17,6 +17,23 @@ namespace ExceptionHandling
             {
                 Console.WriteLine(ex.Message);
             }
+
+            /*
+             * Async / await tests
+             */
+            Program lol = new Program();
+            Task<string> shittolog = lol.Download("https://msdn.microsoft.com");
+            Console.WriteLine("waiting for async task");
+            Console.WriteLine(shittolog.Result);
+            Console.ReadLine();
+        }
+
+
+        public async Task<string> Download(string url)
+        {
+            WebClient webClient = new WebClient();
+
+            return await webClient.DownloadStringTaskAsync(url);
         }
     }
 }

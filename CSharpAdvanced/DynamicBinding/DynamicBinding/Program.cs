@@ -7,7 +7,7 @@ namespace DynamicBinding
         {
             object obj = "aledx";
 
-            var methodInfo = obj.GetType().GetMethod("GetHashCode");
+            var methodInfo = obj.GetType().GetMethod("bob");
             methodInfo.Invoke(null, null);
 
             dynamic lol = "bob";
