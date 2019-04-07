@@ -12,23 +12,21 @@ namespace XsAndOs.Entities
 
         public GameInstance()
         {
-            Console.WriteLine("Game instance successfully created.");
+            _map = new Map();
         }
 
         public void StartGameLoop()
         {
             _gameIsActive = true;
-            _map = new Map();
-
+;
             while (_gameIsActive)
             {
+                Console.WriteLine(_map.GetMapString());
+                Console.WriteLine("It is player 1's turn");
                 _usersInput = Console.ReadLine();
-                Console.WriteLine(_map.UpdateMap());
                 StopGameLoop(_usersInput);
             }
         }
-
-
 
         public void StopGameLoop(string input)
         {

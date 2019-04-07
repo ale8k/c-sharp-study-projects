@@ -11,7 +11,6 @@ namespace XsAndOs.Entities.GameMap
         public Map()
         {
             Console.Clear();
-            Console.WriteLine("Game started, please enter corresponding number to place your x or o");
             CreateGameMap();
         }
 
@@ -20,6 +19,8 @@ namespace XsAndOs.Entities.GameMap
             _gameMapBuilder = new StringBuilder();
 
             _gameMapBuilder
+                .Append("Enter a number corresponding with the position you'd like to replace with an x or o.")
+                .AppendLine()
                 .AppendLine()
                 .Append("  1  |  2  |  3  ")
                 .AppendLine()
@@ -33,13 +34,15 @@ namespace XsAndOs.Entities.GameMap
                 .AppendLine()
 
                 .AppendLine()
-                .Append("  7  |  8  |  9  ");
+                .Append("  7  |  8  |  9  ")
+                .AppendLine()
+                .AppendLine();
+
 
             _gameMap =_gameMapBuilder.ToString();
             Console.WriteLine(_gameMap);
         }
-
-        public string UpdateMap()
+        public string GetMapString()
         {
             Console.Clear();
             return _gameMap;
