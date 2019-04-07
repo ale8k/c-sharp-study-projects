@@ -27,16 +27,7 @@ namespace XsAndOs.CLI
                 case "start":
 
                     _gameActive = true;
-                    _gameInstance = new GameInstance();
-                    Console.WriteLine("New game instance created");
-
-                    while (_gameActive)
-                    {
-                        Console.WriteLine("game active loop");
-                        _usersInput = Console.ReadLine();
-                        if (_usersInput == "stop")
-                            break;
-                    }
+                    _gameInstance = new GameInstance(_gameActive);
                     Console.WriteLine("successfully broken out of game loop");
                     break;
 
