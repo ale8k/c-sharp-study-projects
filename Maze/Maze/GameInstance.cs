@@ -4,6 +4,7 @@ namespace Maze
 {
     public class GameInstance
     {
+
         public DateTime GameStarted = DateTime.Now;
 
         public bool GameIsActive { get; set; }
@@ -45,5 +46,6 @@ namespace Maze
                 }
             }
         }
+
     }
 }

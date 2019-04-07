@@ -1,13 +1,14 @@
 ﻿using System;
-using XsAndOs.Entities;
 
-namespace XsAndOs
+namespace XsAndOs.Entities
 {
-    class GameInstance
+    public class GameInstance
     {
+
         public GameInstance()
         {
 
         }
+
     }
 }

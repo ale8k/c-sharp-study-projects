@@ -9,11 +9,12 @@ namespace XsAndOs.CLI
 
         public void Command()
         {
-            Console.Clear();
             sb.Append("The commands for x's and o's are:")
                 .AppendLine()
                 .AppendLine()
                 .Append("- Help: gives a list of all available commands in the game.")
+                .AppendLine()
+                .Append("- Start: starts an instance of the game.")
                 .AppendLine()
                 .Append("- Close: closes the game.");
             Console.WriteLine(sb);

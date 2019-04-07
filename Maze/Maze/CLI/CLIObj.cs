@@ -10,6 +10,7 @@ namespace Maze.CLI
         public void Command(string usersInput)
         {
             string toLowerInput = usersInput.ToLower();
+
             switch(toLowerInput)
             {
                 case "start":
