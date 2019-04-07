@@ -23,9 +23,7 @@ namespace XsAndOs.Entities
             while (_gameIsActive)
             {
                 _usersInput = Console.ReadLine();
-                // _map.UpdateMap()
-                // accept players choice, depending on player
-                // update map
+                Console.WriteLine(_map.UpdateMap());
                 StopGameLoop(_usersInput);
             }
         }

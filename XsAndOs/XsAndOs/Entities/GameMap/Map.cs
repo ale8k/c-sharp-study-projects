@@ -10,6 +10,8 @@ namespace XsAndOs.Entities.GameMap
 
         public Map()
         {
+            Console.Clear();
+            Console.WriteLine("Game started, please enter corresponding number to place your x or o");
             CreateGameMap();
         }
 
@@ -33,8 +35,14 @@ namespace XsAndOs.Entities.GameMap
                 .AppendLine()
                 .Append("  7  |  8  |  9  ");
 
-            string _gameMap =_gameMapBuilder.ToString();
+            _gameMap =_gameMapBuilder.ToString();
             Console.WriteLine(_gameMap);
+        }
+
+        public string UpdateMap()
+        {
+            Console.Clear();
+            return _gameMap;
         }
     }
 }
