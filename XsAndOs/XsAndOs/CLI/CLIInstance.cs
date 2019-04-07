@@ -7,7 +7,6 @@ namespace XsAndOs.CLI
     {
         private Help _help = new Help();
         private GameInstance _gameInstance;
-        private bool _gameActive;
 
         public CLIInstance()
         {
@@ -25,10 +24,8 @@ namespace XsAndOs.CLI
                     break;
 
                 case "start":
-
-                    _gameActive = true;
-                    _gameInstance = new GameInstance(_gameActive);
-                    Console.WriteLine("successfully broken out of game loop");
+                    _gameInstance = new GameInstance();
+                    _gameInstance.StartGameLoop();
                     break;
 
                 case "close":

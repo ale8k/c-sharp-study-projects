@@ -1,4 +1,6 @@
 ﻿using System;
+using XsAndOs.CLI;
+using XsAndOs.Entities.GameMap;
 
 namespace XsAndOs.Entities
 {
@@ -6,32 +8,37 @@ namespace XsAndOs.Entities
     {
         private bool _gameIsActive;
         private string _usersInput;
+        private Map _map;
 
-        public GameInstance(bool gameIsActive)
+        public GameInstance()
         {
-            Console.WriteLine("Game instance successfully created");
+            Console.WriteLine("Game instance successfully created.");
+        }
+
+        public void StartGameLoop()
+        {
             _gameIsActive = true;
+            _map = new Map();
 
             while (_gameIsActive)
             {
                 _usersInput = Console.ReadLine();
-
-                
-                CheckForStop(_usersInput);
-                Console.WriteLine("game active loop");
+                // _map.UpdateMap()
+                // accept players choice, depending on player
+                // update map
+                StopGameLoop(_usersInput);
             }
         }
 
-        private void CheckForStop(string usersInput)
+
+
+        public void StopGameLoop(string input)
         {
-            usersInput.ToLower();
-            if (usersInput == "stop")
+            if (input.ToLower() == "stop")
             {
                 _gameIsActive = false;
-                Console.WriteLine("Game successfully stopped.");
+                Console.WriteLine("Ended game loop");
             }
         }
-
-
     }
 }
