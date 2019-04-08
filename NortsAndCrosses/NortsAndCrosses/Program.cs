@@ -6,6 +6,10 @@ namespace NortsAndCrosses
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome to norts and crosses, the commands are:");
+            Console.WriteLine("'xo start', 'xo end' and 'xo restart'.");
+            Console.WriteLine("To play the game, enter the corresponding number from the matrix. Have fun!");
+
             Game game = null;
             string playersInput = "0";
             int playersTurn = 1;
@@ -18,6 +22,7 @@ namespace NortsAndCrosses
                  */
                 if (game != null && !hasBeenSaidOnce)
                 {
+                    Console.Clear();
                     Console.WriteLine($"It is player {playersTurn}'s turn");
                     hasBeenSaidOnce = true;
                     game.GetCurrentGameMapState();
@@ -67,6 +72,10 @@ namespace NortsAndCrosses
                     case "9":
                         if (game != null)
                         {
+                            // remove from game map
+                            // add to players map
+                            // test players map for success
+                            // switch to other player on end
                             playersTurn = playersTurn == 1 ? 2 : 1;
                         }
                         break;
