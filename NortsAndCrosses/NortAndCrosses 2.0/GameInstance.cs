@@ -67,8 +67,14 @@ namespace NortAndCrosses_2._0
         {
             while(true)
             {
-
+                Console.WriteLine("Main has:");
+                foreach (int i in _gameMap)
+                {
+                    Console.Write(i + " ");
+                }
+                break;
             }
+            Console.ReadLine();
         }
     }
 }
