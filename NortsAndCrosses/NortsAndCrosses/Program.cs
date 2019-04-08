@@ -8,15 +8,17 @@ namespace NortsAndCrosses
         {
             Game game = null;
             string playersInput;
-            int playerID;
+            bool playerIDInitialised = false;
+            int playerID = 0; // dont wanna do this, feels weird af
 
-            while(true)
+            do
             {
+
                 playersInput = Console.ReadLine();
                 /*
                  * Handles commands outside of the game
                  */
-                switch(playersInput.ToLower())
+                switch (playersInput.ToLower())
                 {
                     case "xo start":
                         game = new Game();
@@ -30,18 +32,27 @@ namespace NortsAndCrosses
                 /*
                  * Listens for a game start
                  */
-                if(game != null)
+                if (game != null)
                 {
-                    playerID = game.GetPlayersTurn();
+                    // mhm, thought maybe having a bool check would work...
+                    if (playerIDInitialised == false)
+                    {
+                        playerID = game.GetPlayersTurn();
+                        playerIDInitialised = true;
+                    }
+
                     Console.WriteLine($"It is player {playerID}'s turn");
 
-                    while(game.ValidatePlayersInput(playersInput) != true)
+                    while (!game.ValidatePlayersInput(playersInput))
                     {
-
+                        playersInput = Console.ReadLine();
                     }
+                    Console.WriteLine("accepted input");
+                    playerID = game.GetPlayersTurn();
+                    Console.WriteLine($"it is now player {playerID}'s turn");
                 }
 
-            }
+            } while (playerIDInitialised);
 
         }
     }
