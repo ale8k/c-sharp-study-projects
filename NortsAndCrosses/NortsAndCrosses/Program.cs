@@ -8,7 +8,7 @@ namespace NortsAndCrosses
         {
             Game game = null;
             string playersInput;
-            int playersTurn;
+            int playersTurn = 1;
 
             while (true)
             {
@@ -35,8 +35,13 @@ namespace NortsAndCrosses
                     case "7":
                     case "8":
                     case "9":
-                        if (game != null && game.ValidatePlayersInput(playersInput))
-                            Console.WriteLine("properly validated, good shit");
+                        if (game != null)
+                        {
+                            game.UpdatePlayersMap(playersTurn);
+                            Console.WriteLine($"player {playersTurn} just had a play");
+                            playersTurn = playersTurn == 1 ? 2 : 1;
+                            Console.WriteLine($"it is now player {playersTurn} turn");
+                        }
                         break;
                 }
             }

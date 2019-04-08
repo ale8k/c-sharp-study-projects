@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandValidation.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
