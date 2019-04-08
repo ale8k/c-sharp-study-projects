@@ -15,6 +15,13 @@ namespace NortsAndCrosses
             _playersMap = new List<int>();
         }
 
+        public List<int> PlayersMap
+        {
+            get
+            {
+                return _playersMap;
+            }
+        }
     }
 
 }

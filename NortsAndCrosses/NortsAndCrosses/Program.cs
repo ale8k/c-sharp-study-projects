@@ -7,15 +7,16 @@ namespace NortsAndCrosses
         static void Main(string[] args)
         {
             Game game = null;
-            string usersInput;
+            string playersInput;
+            int playerID;
 
             while(true)
             {
-                usersInput = Console.ReadLine();
+                playersInput = Console.ReadLine();
                 /*
                  * Handles commands outside of the game
                  */
-                switch(usersInput.ToLower())
+                switch(playersInput.ToLower())
                 {
                     case "xo start":
                         game = new Game();
@@ -29,8 +30,16 @@ namespace NortsAndCrosses
                 /*
                  * Listens for a game start
                  */
-                 if(game != null)
-                    game.GetAndValidateUsersInput(usersInput);
+                if(game != null)
+                {
+                    playerID = game.GetPlayersTurn();
+                    Console.WriteLine($"It is player {playerID}'s turn");
+
+                    while(game.ValidatePlayersInput(playersInput) != true)
+                    {
+
+                    }
+                }
 
             }
 
