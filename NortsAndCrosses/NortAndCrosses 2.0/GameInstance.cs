@@ -14,6 +14,7 @@ namespace NortAndCrosses_2._0
         private string _opponentType;
         private readonly MainPlayer _mainPlayer = new MainPlayer();
         private readonly IOpponent _opponent;
+        private readonly List<int> _gameMap = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
         public GameInstance()
         {
@@ -45,7 +46,29 @@ namespace NortAndCrosses_2._0
 
         private void InitaliseGameLoop(MainPlayer mainPlayer, IOpponent opponent)
         {
+            if(opponent is Ai)
+            {
+                StartAiOpponentGameLoop(mainPlayer, opponent);
+            }
+            else
+            {
+                StartPlayerOpponentGameLoop(mainPlayer, opponent);
+            }
+        }
+        /*
+         * Our main game loops, all instances of the game are held here.
+         */
+        public void StartAiOpponentGameLoop(MainPlayer mainPlayer, IOpponent opponent)
+        {
+            throw new NotImplementedException("To be done at later date");
+        }
 
+        public void StartPlayerOpponentGameLoop(MainPlayer mainPlayer, IOpponent opponent)
+        {
+            while(true)
+            {
+
+            }
         }
     }
 }
