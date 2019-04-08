@@ -2,37 +2,33 @@ using System;
 
 namespace NortsAndCrosses
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Game game = null;
-            string playersInput;
+            string playersInput = Console.ReadLine();
             int playersTurn;
-            do
-            {
-                playersInput = Console.ReadLine();
 
-                /*
-                 * Handles commands outside of the game
-                 */
+            while (true)
+            {
                 switch (playersInput.ToLower())
                 {
                     case "xo start":
                         game = new Game();
                         Console.WriteLine("Game started.");
                         break;
+
                     case "xo end":
                         game = null;
                         Console.WriteLine("Game ended.");
                         break;
                 }
 
-                /*
-                 * Listens for a game start
-                 */
-                if (game != null)
+                while (game != null)
                 {
+
+                    playersInput = Console.ReadLine();
                     playersTurn = game.GetPlayersTurn();
                     Console.WriteLine($"it is player {playersTurn}'s turn");
 
@@ -40,10 +36,9 @@ namespace NortsAndCrosses
                     {
                         playersInput = Console.ReadLine();
                     }
-
+                    break;
                 }
-
-            } while (true);
+            }
 
         }
     }
