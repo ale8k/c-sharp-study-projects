@@ -13,6 +13,7 @@ namespace NortAndCrosses_2._0
             List<int> list1 = new List<int>();
             List<int> list2 = new List<int>();
             List<int> main = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            SequenceValidator sv = new SequenceValidator();
             int playersTurn = 1;
 
             while(true)
@@ -50,12 +51,11 @@ namespace NortAndCrosses_2._0
                 playersTurn = playersTurn == 1 ? 2 : 1;
                 Console.Clear();
                 // all conditions about checking winner, if main is empty are here
-                /*  123 456 789 
-                 *  147 258 369
-                 *  357     159
-                 *  Sequences
-                 */
-
+                
+                if(sv.ValidateSequence(list1))
+                    Console.WriteLine("player 1 win");
+                else if(sv.ValidateSequence(list2))
+                    Console.WriteLine("player 2 win");
             }
         }
     }
