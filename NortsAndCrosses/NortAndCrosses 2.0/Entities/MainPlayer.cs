@@ -8,5 +8,6 @@ namespace NortAndCrosses_2._0.Entities
 {
     public class MainPlayer
     {
+        public List<int> MainPlayerMap { get; set; }
     }
 }

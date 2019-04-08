@@ -15,6 +15,7 @@ namespace NortAndCrosses_2._0
         private readonly MainPlayer _mainPlayer = new MainPlayer();
         private readonly IOpponent _opponent;
         private readonly List<int> _gameMap = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        private readonly MapConstructor mc = new MapConstructor();
 
         public GameInstance()
         {
@@ -65,13 +66,26 @@ namespace NortAndCrosses_2._0
 
         public void StartPlayerOpponentGameLoop(MainPlayer mainPlayer, IOpponent opponent)
         {
+            IOpponent playerOpponent = opponent as Player;
             while(true)
             {
+                
+                // idea is to have:
+                // mc.Draw(_gameMap);
                 Console.WriteLine("Main has:");
                 foreach (int i in _gameMap)
                 {
                     Console.Write(i + " ");
                 }
+
+                Console.WriteLine();
+                Console.Write("List1 has:");
+                bool mhm = mainPlayer.MainPlayerMap is null; // null issue
+                foreach (int i in mainPlayer.MainPlayerMap)
+                {
+                    Console.Write(i + " ");
+                }
+                Console.WriteLine(opponent.GetType());
                 break;
             }
             Console.ReadLine();

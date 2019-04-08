@@ -8,5 +8,6 @@ namespace NortAndCrosses_2._0
 {
     public class MapConstructor
     {
+
     }
 }

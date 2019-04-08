@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace NortAndCrosses_2._0.Entities
 {
-    class Player : IOpponent
+    public class Player : IOpponent
     {
+        public List<int> PlayerMap { get; set; }
     }
 }
