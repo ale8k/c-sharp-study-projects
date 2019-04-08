@@ -25,13 +25,19 @@ namespace NortsAndCrosses
                         game = null;
                         Console.WriteLine("Game ended.");
                         break;
-                }
 
-                if (game != null && game.ValidatePlayersInput(playersInput) == true)
-                {
-                    Console.WriteLine("validated successfully");
-                    playersTurn = game.GetPlayersTurn();
-                    Console.WriteLine($"it is now player {playersTurn}'s turn");
+                    case "1":
+                    case "2":
+                    case "3":
+                    case "4":
+                    case "5":
+                    case "6":
+                    case "7":
+                    case "8":
+                    case "9":
+                        if (game != null && game.ValidatePlayersInput(playersInput))
+                            Console.WriteLine("properly validated, good shit");
+                        break;
                 }
             }
 
