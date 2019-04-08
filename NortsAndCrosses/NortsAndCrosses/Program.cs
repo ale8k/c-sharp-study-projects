@@ -7,13 +7,43 @@ namespace NortsAndCrosses
         static void Main(string[] args)
         {
             Game game = null;
-            string playersInput;
+            string playersInput = "0";
             int playersTurn = 1;
+            bool hasBeenSaidOnce = false;
 
             while (true)
             {
+                /*
+                 * Current turn message: only displayed if game is active.
+                 */
+                if (game != null && !hasBeenSaidOnce)
+                {
+                    Console.WriteLine($"It is player {playersTurn}'s turn");
+                    hasBeenSaidOnce = true;
+                    game.GetCurrentGameMapState();
+                }
+                else if (game != null && hasBeenSaidOnce && game.ValidatePlayersInput(playersInput))
+                {
+                    Console.Clear();
+                    Console.WriteLine($"It is now player {playersTurn}'s turn");
+                    game.GetCurrentGameMapState();
+                }
+                else if(game != null && hasBeenSaidOnce && !game.ValidatePlayersInput(playersInput))
+                {
+                    Console.Clear();
+                    Console.WriteLine($"It is still player {playersTurn}'s turn, they entered wrong input");
+                    game.GetCurrentGameMapState();
+                }
+
+                /*
+                 * Get input from user
+                 */
+                Console.WriteLine();
                 playersInput = Console.ReadLine();
 
+                /*
+                 * Test input against commands & the game itself
+                 */
                 switch (playersInput.ToLower())
                 {
                     case "xo start":
@@ -37,10 +67,7 @@ namespace NortsAndCrosses
                     case "9":
                         if (game != null)
                         {
-                            game.UpdatePlayersMap(playersTurn);
-                            Console.WriteLine($"player {playersTurn} just had a play");
                             playersTurn = playersTurn == 1 ? 2 : 1;
-                            Console.WriteLine($"it is now player {playersTurn} turn");
                         }
                         break;
                 }
