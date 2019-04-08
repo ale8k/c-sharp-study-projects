@@ -11,6 +11,8 @@ namespace NortsAndCrosses
             Console.WriteLine("To play the game, enter the corresponding number from the matrix. Have fun!");
 
             Game game = null;
+            Player player1 = null;
+            Player player2 = null;
             string playersInput = "0";
             int playersTurn = 1;
             string message = "";
@@ -26,6 +28,11 @@ namespace NortsAndCrosses
                     Console.WriteLine($"It is now player {playersTurn}'s turn");
                     Console.WriteLine(message);
                     game.PrintGameMap();
+                    // printing player map
+                    Console.WriteLine();
+                    player1.PrintPlayersMap();
+                    Console.WriteLine();
+                    player2.PrintPlayersMap();
                 }
                 else if(game != null && !game.ValidatePlayersInput(playersInput))
                 {
@@ -48,6 +55,8 @@ namespace NortsAndCrosses
                 {
                     case "xo start":
                         game = new Game();
+                        player1 = game.GetPlayer(1);
+                        player2 = game.GetPlayer(2);
                         Console.WriteLine("Game started.");
                         break;
 
@@ -77,8 +86,12 @@ namespace NortsAndCrosses
                             {
                                 message = "";
                                 game.GetGameMap().Remove(usersIntInput);
-                                game.GetPlayer(playersTurn).PlayersMap.Add(usersIntInput); // gets player object, based on turn flipper
-                                
+
+                                if (playersTurn == player1.PlayerID)
+                                    player1.PlayersMap.Add(usersIntInput);
+                                else if(playersTurn == player2.PlayerID)
+                                    player2.PlayersMap.Add(usersIntInput);
+
                                 playersTurn = playersTurn == 1 ? 2 : 1;
                             }
                         }

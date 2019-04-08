@@ -15,5 +15,13 @@ namespace NortsAndCrosses
             PlayerID = id;
             PlayersMap = new List<int>();
         }
+
+        public void PrintPlayersMap()
+        {
+            foreach (int i in PlayersMap)
+            {
+                Console.Write(i + " ");
+            }
+        }
     }
 }
