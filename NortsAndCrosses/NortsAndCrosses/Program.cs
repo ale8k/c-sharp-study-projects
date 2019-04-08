@@ -16,6 +16,7 @@ namespace NortsAndCrosses
             string playersInput = "0";
             int playersTurn = 1;
             string message = "";
+            int usersIntInput;
 
             while (true)
             {
@@ -24,7 +25,6 @@ namespace NortsAndCrosses
                  */
                 if (game != null && game.ValidatePlayersInput(playersInput))
                 {
-                    Console.Clear();
                     Console.WriteLine($"It is now player {playersTurn}'s turn");
                     Console.WriteLine(message);
                     game.PrintGameMap();
@@ -36,7 +36,6 @@ namespace NortsAndCrosses
                 }
                 else if(game != null && !game.ValidatePlayersInput(playersInput))
                 {
-                    Console.Clear();
                     Console.WriteLine($"It is now player {playersTurn}'s turn");
                     Console.WriteLine("Error: the value you entered in not validatable ");
                     game.PrintGameMap();
@@ -76,7 +75,7 @@ namespace NortsAndCrosses
                     case "9":
                         if (game != null)
                         {
-                            int usersIntInput = Convert.ToInt32(playersInput);
+                            usersIntInput = Convert.ToInt32(playersInput);
 
                             if (!game.GetGameMap().Contains(usersIntInput))
                             {
