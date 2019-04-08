@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NortAndCrosses_2._0
+namespace NortAndCrosses_2._0.Entities
 {
-    class Player : IOpponent
+    public interface IOpponent
     {
+        
     }
 }

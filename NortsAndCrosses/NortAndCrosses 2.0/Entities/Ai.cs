@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NortAndCrosses_2._0
+namespace NortAndCrosses_2._0.Entities
 {
-    public interface IOpponent
+    public class Ai : IOpponent
     {
-        
     }
 }
