@@ -7,11 +7,13 @@ namespace NortsAndCrosses
         static void Main(string[] args)
         {
             Game game = null;
-            string playersInput = Console.ReadLine();
+            string playersInput;
             int playersTurn;
 
             while (true)
             {
+                playersInput = Console.ReadLine();
+
                 switch (playersInput.ToLower())
                 {
                     case "xo start":
@@ -25,18 +27,13 @@ namespace NortsAndCrosses
                         break;
                 }
 
-                while (game != null)
+                if (game != null)
                 {
-
-                    playersInput = Console.ReadLine();
-                    playersTurn = game.GetPlayersTurn();
-                    Console.WriteLine($"it is player {playersTurn}'s turn");
-
-                    while (!game.ValidatePlayersInput(playersInput))
+                    if (game.ValidatePlayersInput(playersInput))
                     {
-                        playersInput = Console.ReadLine();
+                        playersTurn = game.GetPlayersTurn();
+                        Console.WriteLine($"it is player {playersTurn}'s turn");
                     }
-                    break;
                 }
             }
 
