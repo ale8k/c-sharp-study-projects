@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NortAndCrosses_2._0.Entities;
+
 /*
  * Ai implementation will come after.
  * For now, only player will be completed.
@@ -13,14 +11,15 @@ namespace NortAndCrosses_2._0
 {
     public class GameInstance
     {
-        private string opponentType;
-        private IOpponent opponent;
+        private string _opponentType;
+        private readonly MainPlayer _mainPlayer = new MainPlayer();
+        private readonly IOpponent _opponent;
 
         public GameInstance()
         {
-            opponentType = SelectOpponentType();
-
-            opponent = SelectOpponent(opponentType);
+            _opponentType = SelectOpponentType();
+            _opponent = CreateOpponent(_opponentType);
+            InitaliseGameLoop(_mainPlayer, _opponent);
         }
 
         private string SelectOpponentType()
@@ -36,12 +35,17 @@ namespace NortAndCrosses_2._0
             return opType;
         }
 
-        private IOpponent SelectOpponent(string opType)
+        private IOpponent CreateOpponent(string opType)
         {
             if (opType == "ai")
                 return new Ai();
             else
                 return new Player();
+        }
+
+        private void InitaliseGameLoop(MainPlayer mainPlayer, IOpponent opponent)
+        {
+
         }
     }
 }

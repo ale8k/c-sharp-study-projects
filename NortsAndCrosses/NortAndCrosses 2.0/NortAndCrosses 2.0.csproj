@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Ai.cs" />
+    <Compile Include="Entities\MainPlayer.cs" />
     <Compile Include="GameInstance.cs" />
     <Compile Include="Entities\IOpponent.cs" />
     <Compile Include="Entities\Player.cs" />
