@@ -13,31 +13,26 @@ namespace NortsAndCrosses
             Game game = null;
             string playersInput = "0";
             int playersTurn = 1;
-            bool hasBeenSaidOnce = false;
+            string message = "";
 
             while (true)
             {
                 /*
-                 * Current turn message: only displayed if game is active.
+                 * Current turn message
                  */
-                if (game != null && !hasBeenSaidOnce)
-                {
-                    Console.Clear();
-                    Console.WriteLine($"It is player {playersTurn}'s turn");
-                    hasBeenSaidOnce = true;
-                    game.GetCurrentGameMapState();
-                }
-                else if (game != null && hasBeenSaidOnce && game.ValidatePlayersInput(playersInput))
+                if (game != null && game.ValidatePlayersInput(playersInput))
                 {
                     Console.Clear();
                     Console.WriteLine($"It is now player {playersTurn}'s turn");
-                    game.GetCurrentGameMapState();
+                    Console.WriteLine(message);
+                    game.PrintGameMap();
                 }
-                else if(game != null && hasBeenSaidOnce && !game.ValidatePlayersInput(playersInput))
+                else if(game != null && !game.ValidatePlayersInput(playersInput))
                 {
                     Console.Clear();
-                    Console.WriteLine($"It is still player {playersTurn}'s turn, they entered wrong input");
-                    game.GetCurrentGameMapState();
+                    Console.WriteLine($"It is now player {playersTurn}'s turn");
+                    Console.WriteLine("Error: the value you entered in not validatable ");
+                    game.PrintGameMap();
                 }
 
                 /*
@@ -72,11 +67,20 @@ namespace NortsAndCrosses
                     case "9":
                         if (game != null)
                         {
-                            // remove from game map
-                            // add to players map
-                            // test players map for success
-                            // switch to other player on end
-                            playersTurn = playersTurn == 1 ? 2 : 1;
+                            int usersIntInput = Convert.ToInt32(playersInput);
+
+                            if (!game.GetGameMap().Contains(usersIntInput))
+                            {
+                                message = "Error: the value you entered has already been entered";
+                            }
+                            else
+                            {
+                                message = "";
+                                game.GetGameMap().Remove(usersIntInput);
+                                game.GetPlayer(playersTurn).PlayersMap.Add(usersIntInput); // gets player object, based on turn flipper
+                                
+                                playersTurn = playersTurn == 1 ? 2 : 1;
+                            }
                         }
                         break;
                 }
