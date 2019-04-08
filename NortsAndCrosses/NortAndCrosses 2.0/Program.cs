@@ -7,6 +7,9 @@ namespace NortAndCrosses_2._0
     {
         static void Main(string[] args)
         {
+            GameInstance gi = new GameInstance();
+            // below works, above ^ is attempts to move into gameinstance class
+
             List<int> list1 = new List<int>();
             List<int> list2 = new List<int>();
             List<int> main = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
