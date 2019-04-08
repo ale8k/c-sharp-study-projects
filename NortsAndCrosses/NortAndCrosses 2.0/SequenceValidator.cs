@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿using System.Collections.Generic;
 
 namespace NortAndCrosses_2._0
 {
@@ -52,6 +49,5 @@ namespace NortAndCrosses_2._0
         }
 
     }
-
 
 }

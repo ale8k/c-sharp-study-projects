@@ -1,8 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NortAndCrosses_2._0
 {
@@ -14,6 +11,7 @@ namespace NortAndCrosses_2._0
             List<int> list2 = new List<int>();
             List<int> main = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             SequenceValidator sv = new SequenceValidator();
+            string winner = "none";
             int playersTurn = 1;
 
             while(true)
@@ -50,12 +48,22 @@ namespace NortAndCrosses_2._0
 
                 playersTurn = playersTurn == 1 ? 2 : 1;
                 Console.Clear();
+
                 // all conditions about checking winner, if main is empty are here
-                
-                if(sv.ValidateSequence(list1))
-                    Console.WriteLine("player 1 win");
-                else if(sv.ValidateSequence(list2))
-                    Console.WriteLine("player 2 win");
+                if (main.Count <= 6)
+                    if (sv.ValidateSequence(list1))
+                    {
+                        Console.WriteLine("player 1 win");
+                        winner = "player 1";
+                    }
+                    else if (sv.ValidateSequence(list2))
+                    {
+                        Console.WriteLine("player 2 win");
+                        winner = "player 2";
+                    }
+
+                if(main.Count == 0 && winner == "none")
+                    Console.WriteLine("draw");
             }
         }
     }
