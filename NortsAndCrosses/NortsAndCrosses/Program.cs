@@ -27,13 +27,11 @@ namespace NortsAndCrosses
                         break;
                 }
 
-                if (game != null)
+                if (game != null && game.ValidatePlayersInput(playersInput) == true)
                 {
-                    if (game.ValidatePlayersInput(playersInput))
-                    {
-                        playersTurn = game.GetPlayersTurn();
-                        Console.WriteLine($"it is player {playersTurn}'s turn");
-                    }
+                    Console.WriteLine("validated successfully");
+                    playersTurn = game.GetPlayersTurn();
+                    Console.WriteLine($"it is now player {playersTurn}'s turn");
                 }
             }
 
