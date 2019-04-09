@@ -80,7 +80,7 @@ namespace NortAndCrosses_2._0
 
                 Console.WriteLine();
                 Console.Write("List1 has:");
-                bool mhm = mainPlayer.MainPlayerMap is null; // null issue
+                bool mhm = mainPlayer.MainPlayerMap is null; // null issues
                 foreach (int i in mainPlayer.MainPlayerMap)
                 {
                     Console.Write(i + " ");
