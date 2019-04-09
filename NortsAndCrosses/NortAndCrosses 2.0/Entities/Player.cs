@@ -8,6 +8,11 @@ namespace NortAndCrosses_2._0.Entities
 {
     public class Player : IOpponent
     {
-        public List<int> PlayerMap { get; set; }
+        public List<int> Map { get; set; }
+
+        public Player()
+        {
+            Map = new List<int>();
+        }
     }
 }

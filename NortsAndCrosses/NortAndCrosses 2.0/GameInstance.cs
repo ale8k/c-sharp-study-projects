@@ -72,19 +72,27 @@ namespace NortAndCrosses_2._0
                 
                 // idea is to have:
                 // mc.Draw(_gameMap);
-                Console.WriteLine("Main has:");
+                Console.WriteLine("Left in the game:");
                 foreach (int i in _gameMap)
                 {
                     Console.Write(i + " ");
                 }
 
                 Console.WriteLine();
-                Console.Write("List1 has:");
-                bool mhm = mainPlayer.MainPlayerMap is null; // null issues
+                Console.Write("Player 1 has:");
                 foreach (int i in mainPlayer.MainPlayerMap)
                 {
                     Console.Write(i + " ");
                 }
+
+                Console.WriteLine();
+                Console.Write("Player 2 has:");
+                foreach (int i in opponent.Map)
+                {
+                    Console.Write(i + " ");
+                }
+
+
                 Console.WriteLine(opponent.GetType());
                 break;
             }
