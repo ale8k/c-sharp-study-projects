@@ -69,6 +69,7 @@ namespace NortAndCrosses_2._0
                     Console.WriteLine("draw");
             }
             */
+
         }
     }
 }

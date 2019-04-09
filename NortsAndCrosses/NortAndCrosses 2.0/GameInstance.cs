@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using NortAndCrosses_2._0.Entities;
+using NortAndCrosses_2._0.Validators;
 
 /*
  * Ai implementation will come after.
@@ -11,10 +12,11 @@ namespace NortAndCrosses_2._0
 {
     public class GameInstance
     {
-        private string _opponentType;
         private readonly MainPlayer _mainPlayer = new MainPlayer();
+        private string _opponentType;
         private readonly IOpponent _opponent;
         private readonly List<int> _gameMap = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        private readonly SequenceValidator sv = new SequenceValidator();
         private readonly MapConstructor mc = new MapConstructor();
 
         public GameInstance()
@@ -66,37 +68,18 @@ namespace NortAndCrosses_2._0
 
         public void StartPlayerOpponentGameLoop(MainPlayer mainPlayer, IOpponent opponent)
         {
-            IOpponent playerOpponent = opponent as Player;
             while(true)
             {
-                
-                // idea is to have:
+                int usersInput;
                 // mc.Draw(_gameMap);
                 Console.WriteLine("Left in the game:");
                 foreach (int i in _gameMap)
                 {
                     Console.Write(i + " ");
                 }
-
-                Console.WriteLine();
-                Console.Write("Player 1 has:");
-                foreach (int i in mainPlayer.MainPlayerMap)
-                {
-                    Console.Write(i + " ");
-                }
-
-                Console.WriteLine();
-                Console.Write("Player 2 has:");
-                foreach (int i in opponent.Map)
-                {
-                    Console.Write(i + " ");
-                }
-
-
-                Console.WriteLine(opponent.GetType());
-                break;
-            }
-            Console.ReadLine();
+                usersInput = UserInputValidator.ValidateInput(Console.ReadLine());
+            } 
         }
+
     }
 }

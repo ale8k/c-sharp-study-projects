@@ -8,6 +8,14 @@ namespace NortAndCrosses_2._0
 {
     public class MapConstructor
     {
+        public MapConstructor()
+        {
 
+        }
+
+        public static void Draw(List<int> map)
+        {
+
+        }
     }
 }

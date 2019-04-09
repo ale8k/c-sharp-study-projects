@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NortAndCrosses_2._0
+namespace NortAndCrosses_2._0.Validators
 {
     /*  123 456 789 
      *  147 258 369
