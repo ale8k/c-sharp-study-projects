@@ -81,11 +81,11 @@ namespace NortAndCrosses_2._0
                 }
 
                 Console.WriteLine(mainPlayer.Title);
-                ValidatePlayersMap(mainPlayer);
-                Console.WriteLine("main player is ok");
+                int mpsInput = ValidatePlayersMap(mainPlayer, _gameMap);
+                Console.WriteLine("main players input is on the map and is ok to use");
 
                 Console.WriteLine(ipOpponent.Title);
-                ValidatePlayersMap(ipOpponent);
+                int opsInput = ValidatePlayersMap(ipOpponent, _gameMap);
                 Console.WriteLine("opponents input validated boyo continue m'lord");
                 
             } 
@@ -99,19 +99,19 @@ namespace NortAndCrosses_2._0
                 return false;
         }
 
-        private bool ValidatePlayersMap(IPlayer player)
+        private int ValidatePlayersMap(IPlayer player, List<int> gameMap)
         {
             bool mapValidated = false;
             
             while (!mapValidated)
             {
                 player.Input = UserInputValidator.ValidateInput(Console.ReadLine());
-                mapValidated = ValidateMap(_gameMap, player.Input);
+                mapValidated = ValidateMap(gameMap, player.Input);
 
                 if(!mapValidated)
                     Console.WriteLine($"Please pick a number on the map, {player.Input} couldn't be found");
             }
-            return true;
+            return player.Input;
         }
     }
 }
