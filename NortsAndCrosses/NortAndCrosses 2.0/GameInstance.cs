@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using NortAndCrosses_2._0.Entities;
 using NortAndCrosses_2._0.Validators;
-using NortAndCrosses_2._0.Game.Logic;
 
 /*
  * Ai implementation will come after.
@@ -16,9 +15,8 @@ namespace NortAndCrosses_2._0
         private readonly MainPlayer _mainPlayer = new MainPlayer();
         private string _opponentType;
         private readonly IOpponent _opponent;
-        private readonly List<int> _gameMap = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        private readonly List<int> _gameMap = new List<int> {  2, 3, 4, 5, 6, 7, 8, 9 };
         private readonly SequenceValidator sv = new SequenceValidator();
-        private readonly MapValidator mv = new MapValidator();
         private readonly MapConstructor mc = new MapConstructor();
 
         public GameInstance()
@@ -70,9 +68,11 @@ namespace NortAndCrosses_2._0
 
         public void StartPlayerOpponentGameLoop(MainPlayer mainPlayer, IOpponent opponent)
         {
+            IPlayer ipOpponent = (IPlayer)opponent;
+
             while (true)
             {
-                
+
                 // mc.Draw(_gameMap);
                 Console.WriteLine("Left in the game:");
                 foreach (int i in _gameMap)
@@ -80,15 +80,38 @@ namespace NortAndCrosses_2._0
                     Console.Write(i + " ");
                 }
 
-                // getting input for the boobjects 
-                mainPlayer.MainPlayerInput = UserInputValidator.ValidateInput(Console.ReadLine());
-                // does game map have (this input)
-                // if yes, try again
-                // if no, proceed
-                opponent.OpponentInput = UserInputValidator.ValidateInput(Console.ReadLine());
-                // game logic
-                // repeat
+                Console.WriteLine(mainPlayer.Title);
+                ValidatePlayersMap(mainPlayer);
+                Console.WriteLine("main player is ok");
+
+                Console.WriteLine(ipOpponent.Title);
+                ValidatePlayersMap(ipOpponent);
+                Console.WriteLine("opponents input validated boyo continue m'lord");
+                
             } 
+        }
+
+        private bool ValidateMap(List<int> gameMap, int input)
+        {
+            if (gameMap.Contains(input))
+                return true;
+            else
+                return false;
+        }
+
+        private bool ValidatePlayersMap(IPlayer player)
+        {
+            bool mapValidated = false;
+            
+            while (!mapValidated)
+            {
+                player.Input = UserInputValidator.ValidateInput(Console.ReadLine());
+                mapValidated = ValidateMap(_gameMap, player.Input);
+
+                if(!mapValidated)
+                    Console.WriteLine($"Please pick a number on the map, {player.Input} couldn't be found");
+            }
+            return true;
         }
     }
 }

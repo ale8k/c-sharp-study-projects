@@ -43,11 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Ai.cs" />
+    <Compile Include="Entities\IPlayer.cs" />
     <Compile Include="Entities\MainPlayer.cs" />
     <Compile Include="GameInstance.cs" />
     <Compile Include="Entities\IOpponent.cs" />
     <Compile Include="Entities\Player.cs" />
-    <Compile Include="Game\Logic\MapValidator.cs" />
     <Compile Include="MapConstructor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
