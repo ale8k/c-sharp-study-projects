@@ -9,6 +9,7 @@ namespace NortAndCrosses_2._0.Entities
     public class Player : IOpponent
     {
         public List<int> Map { get; set; }
+        public int OpponentInput { get; set; }
 
         public Player()
         {

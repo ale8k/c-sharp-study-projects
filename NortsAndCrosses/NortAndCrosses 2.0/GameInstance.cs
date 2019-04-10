@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using NortAndCrosses_2._0.Entities;
 using NortAndCrosses_2._0.Validators;
+using NortAndCrosses_2._0.Game.Logic;
 
 /*
  * Ai implementation will come after.
@@ -17,6 +18,7 @@ namespace NortAndCrosses_2._0
         private readonly IOpponent _opponent;
         private readonly List<int> _gameMap = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         private readonly SequenceValidator sv = new SequenceValidator();
+        private readonly MapValidator mv = new MapValidator();
         private readonly MapConstructor mc = new MapConstructor();
 
         public GameInstance()
@@ -68,18 +70,25 @@ namespace NortAndCrosses_2._0
 
         public void StartPlayerOpponentGameLoop(MainPlayer mainPlayer, IOpponent opponent)
         {
-            while(true)
+            while (true)
             {
-                int usersInput;
+                
                 // mc.Draw(_gameMap);
                 Console.WriteLine("Left in the game:");
                 foreach (int i in _gameMap)
                 {
                     Console.Write(i + " ");
                 }
-                usersInput = UserInputValidator.ValidateInput(Console.ReadLine());
+
+                // getting input for the boobjects 
+                mainPlayer.MainPlayerInput = UserInputValidator.ValidateInput(Console.ReadLine());
+                // does game map have (this input)
+                // if yes, try again
+                // if no, proceed
+                opponent.OpponentInput = UserInputValidator.ValidateInput(Console.ReadLine());
+                // game logic
+                // repeat
             } 
         }
-
     }
 }
