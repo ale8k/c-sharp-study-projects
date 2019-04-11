@@ -68,6 +68,7 @@ namespace NortAndCrosses_2._0
 
         public void StartPlayerOpponentGameLoop(MainPlayer mainPlayer, IOpponent opponent)
         {
+            Console.Clear();
             IPlayer ipOpponent = (IPlayer)opponent;
             mc.Draw(_gameMap, mainPlayer, ipOpponent);
 

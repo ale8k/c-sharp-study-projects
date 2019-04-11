@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using NortAndCrosses_2._0.Entities;
 
@@ -21,7 +22,7 @@ namespace NortAndCrosses_2._0
 
         public void Draw(List<int> map, IPlayer mainPlayer, IPlayer opponent)
         {
-            System.Console.WriteLine(sb.ToString());
+            Console.WriteLine(sb.ToString());
         }
 
         public void Update(IPlayer player)
