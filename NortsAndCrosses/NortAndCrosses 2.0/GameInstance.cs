@@ -68,27 +68,13 @@ namespace NortAndCrosses_2._0
 
         public void StartPlayerOpponentGameLoop(MainPlayer mainPlayer, IOpponent opponent)
         {
-            bool winnerHasBeenFound = false;
             IPlayer ipOpponent = (IPlayer)opponent;
+            mc.Draw(_gameMap, mainPlayer, ipOpponent);
 
-            while (!winnerHasBeenFound)
+            while (true)
             {
-                Console.Clear();
-                mc.Draw(_gameMap, mainPlayer, ipOpponent);
-
-                TakeTurnFor(mainPlayer);
-                winnerHasBeenFound = HasPlayerWon(mainPlayer);
-                mc.Update(mainPlayer);
-
-                TakeTurnFor(ipOpponent);
-                winnerHasBeenFound = HasPlayerWon(ipOpponent);
-                mc.Update(ipOpponent);
-
-
-                if (winnerHasBeenFound)
-                    Console.ReadLine();
-                else if(!winnerHasBeenFound && _gameMap.Count == 0)
-                    Console.WriteLine("Draw");
+                Play(_gameMap, mainPlayer, ipOpponent);
+                Play(_gameMap, ipOpponent, mainPlayer);
             } 
         }
 
@@ -135,5 +121,30 @@ namespace NortAndCrosses_2._0
             return false;
         }
 
+        private void Play(List<int> gameMap, IPlayer currentPlayerTurn, IPlayer opponent)
+        {
+            bool winnerHasBeenFound;
+
+            TakeTurnFor(currentPlayerTurn);
+            winnerHasBeenFound = HasPlayerWon(currentPlayerTurn);
+
+            if (winnerHasBeenFound)
+            {
+                Console.Clear();
+                Console.WriteLine($"{currentPlayerTurn.Title} wins");
+                Console.ReadLine();
+                Environment.Exit(0);
+            }
+            else if (gameMap.Count == 0)
+            {
+                Console.Clear();
+                Console.WriteLine("Draw");
+                Console.ReadLine();
+                Environment.Exit(0);
+            }
+            mc.Update(currentPlayerTurn);
+            Console.Clear();
+            mc.Draw(gameMap, currentPlayerTurn, opponent);
+        }
     }
 }
