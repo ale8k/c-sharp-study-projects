@@ -73,24 +73,22 @@ namespace NortAndCrosses_2._0
 
             while (!winnerHasBeenFound)
             {
-
-                // mc.Draw(_gameMap);
-                Console.WriteLine("Left in the game:");
-                foreach (int i in _gameMap)
-                {
-                    Console.Write(i + " ");
-                }
+                Console.Clear();
+                mc.Draw(_gameMap, mainPlayer, ipOpponent);
 
                 TakeTurnFor(mainPlayer);
-                // update map
                 winnerHasBeenFound = HasPlayerWon(mainPlayer);
+                mc.Update(mainPlayer);
 
                 TakeTurnFor(ipOpponent);
-                // update map
                 winnerHasBeenFound = HasPlayerWon(ipOpponent);
+                mc.Update(ipOpponent);
+
 
                 if (winnerHasBeenFound)
                     Console.ReadLine();
+                else if(!winnerHasBeenFound && _gameMap.Count == 0)
+                    Console.WriteLine("Draw");
             } 
         }
 

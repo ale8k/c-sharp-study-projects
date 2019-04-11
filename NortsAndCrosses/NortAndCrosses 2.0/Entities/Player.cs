@@ -14,7 +14,7 @@ namespace NortAndCrosses_2._0.Entities
 
         public Player()
         {
-            Title = "Player Opponent / Player 2";
+            Title = "Player Opponent / Player 2: X's";
             Map = new List<int>();
         }
     }
