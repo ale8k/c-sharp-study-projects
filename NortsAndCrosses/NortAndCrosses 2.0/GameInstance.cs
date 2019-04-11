@@ -21,6 +21,7 @@ namespace NortAndCrosses_2._0
 
         public GameInstance()
         {
+            Console.WriteLine("What kind of opponent would you like? 'Ai' or 'Human'");
             _opponentType = SelectOpponentType();
             _opponent = CreateOpponent(_opponentType);
             InitaliseGameLoop(_mainPlayer, _opponent);
@@ -55,6 +56,7 @@ namespace NortAndCrosses_2._0
             }
             else
             {
+                Console.BackgroundColor = ConsoleColor.White;
                 StartPlayerOpponentGameLoop(mainPlayer, opponent);
             }
         }
@@ -69,6 +71,7 @@ namespace NortAndCrosses_2._0
         public void StartPlayerOpponentGameLoop(MainPlayer mainPlayer, IOpponent opponent)
         {
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Blue;
             IPlayer ipOpponent = (IPlayer)opponent;
             mc.Draw(_gameMap, mainPlayer, ipOpponent);
 
