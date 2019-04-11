@@ -15,7 +15,7 @@ namespace NortAndCrosses_2._0
         private readonly MainPlayer _mainPlayer = new MainPlayer();
         private string _opponentType;
         private readonly IOpponent _opponent;
-        private readonly List<int> _gameMap = new List<int> {  2, 3, 4, 5, 6, 7, 8, 9 };
+        private readonly List<int> _gameMap = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         private readonly SequenceValidator sv = new SequenceValidator();
         private readonly MapConstructor mc = new MapConstructor();
 
@@ -68,9 +68,10 @@ namespace NortAndCrosses_2._0
 
         public void StartPlayerOpponentGameLoop(MainPlayer mainPlayer, IOpponent opponent)
         {
+            bool winnerHasBeenFound = false;
+            IPlayer ipOpponent = (IPlayer)opponent;
 
-
-            while (true)
+            while (!winnerHasBeenFound)
             {
 
                 // mc.Draw(_gameMap);
@@ -79,8 +80,17 @@ namespace NortAndCrosses_2._0
                 {
                     Console.Write(i + " ");
                 }
+
                 TakeTurnFor(mainPlayer);
-                TakeTurnFor(opponent as IPlayer);
+                // update map
+                winnerHasBeenFound = HasPlayerWon(mainPlayer);
+
+                TakeTurnFor(ipOpponent);
+                // update map
+                winnerHasBeenFound = HasPlayerWon(ipOpponent);
+
+                if (winnerHasBeenFound)
+                    Console.ReadLine();
             } 
         }
 
@@ -114,5 +124,18 @@ namespace NortAndCrosses_2._0
             player.Map.Add(pInput);
             _gameMap.Remove(pInput);
         }
+
+        private bool HasPlayerWon(IPlayer player)
+        {
+            bool won = sv.ValidateSequence(player.Map);
+
+            if (won)
+            {
+                Console.WriteLine($"{player.Title} has won.");
+                return true;
+            }
+            return false;
+        }
+
     }
 }
