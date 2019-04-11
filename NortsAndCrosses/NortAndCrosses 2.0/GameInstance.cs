@@ -68,7 +68,7 @@ namespace NortAndCrosses_2._0
 
         public void StartPlayerOpponentGameLoop(MainPlayer mainPlayer, IOpponent opponent)
         {
-            IPlayer ipOpponent = (IPlayer)opponent;
+
 
             while (true)
             {
@@ -79,19 +79,12 @@ namespace NortAndCrosses_2._0
                 {
                     Console.Write(i + " ");
                 }
-
-                Console.WriteLine(mainPlayer.Title);
-                int mpsInput = ValidatePlayersMap(mainPlayer, _gameMap);
-                Console.WriteLine("main players input is on the map and is ok to use");
-
-                Console.WriteLine(ipOpponent.Title);
-                int opsInput = ValidatePlayersMap(ipOpponent, _gameMap);
-                Console.WriteLine("opponents input validated boyo continue m'lord");
-                
+                TakeTurnFor(mainPlayer);
+                TakeTurnFor(opponent as IPlayer);
             } 
         }
 
-        private bool ValidateMap(List<int> gameMap, int input)
+        private bool ValidInputForMap(List<int> gameMap, int input)
         {
             if (gameMap.Contains(input))
                 return true;
@@ -99,19 +92,27 @@ namespace NortAndCrosses_2._0
                 return false;
         }
 
-        private int ValidatePlayersMap(IPlayer player, List<int> gameMap)
+        private int ValidatePlayersInput(IPlayer player, List<int> gameMap)
         {
             bool mapValidated = false;
             
             while (!mapValidated)
             {
                 player.Input = UserInputValidator.ValidateInput(Console.ReadLine());
-                mapValidated = ValidateMap(gameMap, player.Input);
+                mapValidated = ValidInputForMap(gameMap, player.Input);
 
                 if(!mapValidated)
                     Console.WriteLine($"Please pick a number on the map, {player.Input} couldn't be found");
             }
             return player.Input;
+        }
+
+        private void TakeTurnFor(IPlayer player)
+        {
+            Console.WriteLine($"It is {player.Title}'s turn");
+            int pInput = ValidatePlayersInput(player, _gameMap);
+            player.Map.Add(pInput);
+            _gameMap.Remove(pInput);
         }
     }
 }

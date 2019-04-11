@@ -9,13 +9,13 @@ namespace NortAndCrosses_2._0.Entities
     public class MainPlayer : IPlayer
     {
         public string Title { get; set; } 
-        public List<int> MainPlayerMap { get; set; }
+        public List<int> Map { get; set; }
         public int Input { get; set; }
 
         public MainPlayer()
         {
             Title = "Main Player / Player 1";
-            MainPlayerMap = new List<int>();
+            Map = new List<int>();
         }
     }
 }

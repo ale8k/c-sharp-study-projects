@@ -10,5 +10,6 @@ namespace NortAndCrosses_2._0.Entities
     {
         string Title { get; set; }
         int Input { get; set; }
+        List<int> Map { get; set; }
     }
 }
