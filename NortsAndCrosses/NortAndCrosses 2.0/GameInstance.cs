@@ -65,7 +65,10 @@ namespace NortAndCrosses_2._0
          */
         public void StartAiOpponentGameLoop(MainPlayer mainPlayer, IOpponent opponent)
         {
-            throw new NotImplementedException("To be done at later date");
+            // throw new NotImplementedException("To be done at later date");
+            mc.Draw(_gameMap, mainPlayer, opponent as Player);
+            Console.ReadLine();
+            
         }
 
         public void StartPlayerOpponentGameLoop(MainPlayer mainPlayer, IOpponent opponent)
