@@ -91,7 +91,7 @@ namespace NortAndCrosses_2._0
             } 
         }
 
-        private bool ValidInputForMap(List<int> gameMap, int input)
+        public static bool ValidInputForMap(List<int> gameMap, int input)
         {
             if (gameMap.Contains(input))
                 return true;
@@ -116,6 +116,8 @@ namespace NortAndCrosses_2._0
 
         private void TakeTurnFor(IPlayer player)
         {
+
+
             if (player is Ai == false)
             {
                 Console.WriteLine($"It is {player.Title}'s turn");
@@ -127,7 +129,8 @@ namespace NortAndCrosses_2._0
             {
                 Console.WriteLine(player.Title + " is taking a turn...");
                 // computer ai logic.
-                player.Map.Add(1);
+                Ai computer = player as Ai;
+                computer.TakeTurn(_gameMap);
 
                 Console.WriteLine("Turn taken for" + player.Title);
                 Console.WriteLine("Press enter to continue...");
@@ -170,6 +173,7 @@ namespace NortAndCrosses_2._0
                 Console.ReadLine();
                 Environment.Exit(0);
             }
+
             mc.Update(currentPlayerTurn);
             Console.Clear();
             mc.Draw(gameMap, currentPlayerTurn, opponent);

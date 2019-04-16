@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using NortAndCrosses_2._0;
 
 namespace NortAndCrosses_2._0.Entities
 {
@@ -16,6 +13,14 @@ namespace NortAndCrosses_2._0.Entities
         {
             Title = "Computer";
             Map = new List<int>();
+        }
+
+        public void TakeTurn(List<int> gameMap)
+        {
+            // get comp input, use method below to just validate everything is ok for sure
+
+            // does the input the computer has done exist in game map??
+            GameInstance.ValidInputForMap(gameMap, 0); // something to think about
         }
     }
 }
