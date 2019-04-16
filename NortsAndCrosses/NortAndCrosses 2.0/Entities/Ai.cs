@@ -15,6 +15,7 @@ namespace NortAndCrosses_2._0.Entities
         public Ai()
         {
             Title = "Computer";
+            Map = new List<int>();
         }
     }
 }

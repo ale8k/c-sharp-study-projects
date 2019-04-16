@@ -9,6 +9,7 @@ namespace NortAndCrosses_2._0
         static void Main(string[] args)
         {
             GameInstance gi = new GameInstance();
+           
             Console.WriteLine();
             // below works, above ^ is attempts to move into gameinstance class
             /*

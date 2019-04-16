@@ -65,9 +65,15 @@ namespace NortAndCrosses_2._0
          */
         public void StartAiOpponentGameLoop(MainPlayer mainPlayer, IOpponent opponent)
         {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             // throw new NotImplementedException("To be done at later date");
             mc.Draw(_gameMap, mainPlayer, opponent as Player);
-            Console.ReadLine();
+
+            while (true)
+            {
+                Play(_gameMap, mainPlayer, opponent as IPlayer);
+                Play(_gameMap, opponent as IPlayer, mainPlayer);
+            }
             
         }
 
@@ -110,10 +116,24 @@ namespace NortAndCrosses_2._0
 
         private void TakeTurnFor(IPlayer player)
         {
-            Console.WriteLine($"It is {player.Title}'s turn");
-            int pInput = ValidatePlayersInput(player, _gameMap);
-            player.Map.Add(pInput);
-            _gameMap.Remove(pInput);
+            if (player is Ai == false)
+            {
+                Console.WriteLine($"It is {player.Title}'s turn");
+                int pInput = ValidatePlayersInput(player, _gameMap);
+                player.Map.Add(pInput);
+                _gameMap.Remove(pInput);
+            }
+            else
+            {
+                Console.WriteLine(player.Title + " is taking a turn...");
+                // computer ai logic.
+                player.Map.Add(1);
+
+                Console.WriteLine("Turn taken for" + player.Title);
+                Console.WriteLine("Press enter to continue...");
+                Console.ReadLine();
+            }
+
         }
 
         private bool HasPlayerWon(IPlayer player)
@@ -133,6 +153,7 @@ namespace NortAndCrosses_2._0
             bool winnerHasBeenFound;
 
             TakeTurnFor(currentPlayerTurn);
+            
             winnerHasBeenFound = HasPlayerWon(currentPlayerTurn);
 
             if (winnerHasBeenFound)
