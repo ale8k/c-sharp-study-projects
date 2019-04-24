@@ -3,6 +3,7 @@
     public interface ITask
     {
         int TaskID { get; }
+        ITask ShowInfo();
         void Run();
     }
 

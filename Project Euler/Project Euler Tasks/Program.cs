@@ -21,13 +21,11 @@ namespace Project_Euler_Tasks
             foreach(ITask task in myTaskList)
             {
                 if (task.TaskID == id)
-                    task.Run();
+                    task.ShowInfo().Run();
             }
+
         }
 
     }
-
-
-
 
 }
