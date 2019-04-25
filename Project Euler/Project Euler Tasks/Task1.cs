@@ -28,6 +28,7 @@ namespace Project_Euler_Tasks
         }
         public void RunTask1()
         {
+            
 
         }
 

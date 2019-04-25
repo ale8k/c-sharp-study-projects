@@ -12,7 +12,8 @@ namespace Project_Euler_Tasks
         {
             List<ITask> myTasks = new List<ITask>();
             myTasks.Add(new Task1());
-
+            Console.WriteLine($"Currently there are {myTasks.Count} complete of 657");
+            Console.WriteLine();
             RunTask(1, myTasks);
         }
 

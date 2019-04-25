@@ -31,6 +31,7 @@ namespace NortAndCrosses_2._0.Entities
             // WITH comp input, use method below to just validate everything is ok for sure
 
             // does the input the computer has done exist in game map??
+            // Perhaps have running brain object injected into this...
             GameInstance.ValidInputForMap(gameMap, 0); // something to think about
         }
     }
