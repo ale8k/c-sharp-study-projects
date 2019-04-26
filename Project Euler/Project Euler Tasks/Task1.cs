@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Project_Euler_Tasks
 {
     public class Task1 : ITask
     {
-        private int _taskId = 1;
+        public int TaskID { get; } = 1;
 
         public ITask ShowInfo()
         {
@@ -16,24 +17,22 @@ namespace Project_Euler_Tasks
 
         public void Run()
         {
-            RunTask1();
-            Console.ReadLine();
-        }
-        public int TaskID
-        {
-            get
-            {
-                return _taskId;
-            }
-        }
-        public void RunTask1()
-        {
-            
+            List<int> numList = new List<int>();
+            int sum = 0;
 
+            for (int i = 0; i < 1000; i++)
+            {
+                if (i % 3 == 0 || i % 5 == 0)
+                    numList.Add(i);
+            }
+            foreach (int i in numList)
+            {
+                sum += i;
+            }
+            Console.WriteLine($"The sum of all multiples of 3 and 5 in 1000 is {sum}");
+            Console.ReadLine();
         }
 
 
     }
-
-
 }
