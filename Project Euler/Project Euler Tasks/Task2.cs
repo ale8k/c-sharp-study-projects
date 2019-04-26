@@ -25,13 +25,13 @@ namespace Project_Euler_Tasks
             long nextInLine = 0;
             long sum = 0;
 
-            for (long i = 0; i < 4000000; i++)
+            for (long i = 0; i < 34; i++)
             {
                 nextInLine = fibList[fibList.Count - 1] + fibList[fibList.Count - 2];
                 fibList.Add(nextInLine);
 
-                if (fibList[Convert.ToInt32(i)] % 2 == 0)
-                    sum += nextInLine;
+                if (fibList[Convert.ToInt32(i)] < 4000000 && fibList[Convert.ToInt32(i)] % 2 == 0)
+                    sum += fibList[Convert.ToInt32(i)];
             }
 
             Console.WriteLine("Sum of all even nums in a fib seq upto 4million is:");
