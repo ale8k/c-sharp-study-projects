@@ -12,6 +12,8 @@ namespace Project_Euler_Tasks.Tasks
         public ITask ShowInfo()
         {
             Console.WriteLine("Largest prime factor:");
+            Console.WriteLine("The prime factors of 13195 are 5, 7, 13 and 29.");
+            Console.WriteLine("What is the largest prime factor of the number 600851475143 ?");
 
             return this;
 
@@ -29,6 +31,8 @@ namespace Project_Euler_Tasks.Tasks
                 else
                     factor += 2;
             }
+            Console.WriteLine();
+            Console.WriteLine("Largest prime factor:");
             Console.WriteLine(factor);
         }
     }
