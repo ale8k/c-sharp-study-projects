@@ -18,7 +18,9 @@ namespace Project_Euler_Tasks.Tasks
             Console.WriteLine();
             Console.WriteLine("By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.");
             Console.WriteLine();
+
             return this;
+
         }
 
         public void Run()
