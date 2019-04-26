@@ -18,15 +18,30 @@ namespace Project_Euler_Tasks.Tasks
 
         public void Run()
         {
+            //long num = 600851475143;
+            long num = 13195;
 
+            List<long> primeList = GeneratePrimeList(GenerateListFor(num));
+            List<long> primeFactorList = GetPrimeFactorsFor(primeList, num);
 
-            List<long> primeList = GeneratePrimeList(GenerateListFor(100));
-
-            foreach (long i in primeList)
+            foreach (long i in primeFactorList)
             {
                 Console.WriteLine(i);
             }
+            
+        }
 
+        private List<long> GetPrimeFactorsFor(List<long> primeList, long num)
+        {
+            List<long> primeFactors = new List<long>();
+
+            foreach (long i in primeList)
+            {
+                if (num % i == 0)
+                    primeFactors.Add(i);
+            }
+
+            return primeFactors;
         }
 
         private List<long> GeneratePrimeList(List<long> list)
@@ -59,7 +74,7 @@ namespace Project_Euler_Tasks.Tasks
 
             for (long i = 2; i < num; i++)
             {
-                list.Add(i);
+                list.Add(i); // running out of memory inside list... maybe array needed...
             }
             return list;
         }
