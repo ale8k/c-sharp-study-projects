@@ -29,7 +29,7 @@ namespace Project_Euler_Tasks.Tasks
                 else
                     factor += 2;
             }
-
+            Console.WriteLine(factor);
         }
     }
 
