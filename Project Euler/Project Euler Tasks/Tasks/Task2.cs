@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Project_Euler_Tasks.Interfaces;
 
-namespace Project_Euler_Tasks
+
+namespace Project_Euler_Tasks.Tasks
 {
     public class Task2 : ITask
     {
@@ -37,5 +39,7 @@ namespace Project_Euler_Tasks
             Console.WriteLine("Sum of all even nums in a fib seq upto 4million is:");
             Console.WriteLine(sum);
         }
+
     }
+
 }

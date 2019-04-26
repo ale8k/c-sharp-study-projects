@@ -1,10 +1,11 @@
 ﻿using System;
+using Project_Euler_Tasks.Interfaces;
 
-namespace Project_Euler_Tasks
+namespace Project_Euler_Tasks.Tasks
 {
-    public class Task4 : ITask
+    public class Task5 : ITask
     {
-        public int TaskID { get; } = 4;
+        public int TaskID { get; } = 5;
 
         public ITask ShowInfo()
         {
@@ -15,6 +16,9 @@ namespace Project_Euler_Tasks
 
         public void Run()
         {
+
         }
+
     }
+
 }

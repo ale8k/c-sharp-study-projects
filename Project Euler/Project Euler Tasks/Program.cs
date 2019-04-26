@@ -1,29 +1,31 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Project_Euler_Tasks.Tasks;
+using Project_Euler_Tasks.Interfaces;
 
 namespace Project_Euler_Tasks
 {
-
     class Program
     {
         static void Main(string[] args)
         {
             int usersInput;
-
             List<ITask> myTasks = GetTaskList();
-
-            Console.WriteLine($"Currently there are {myTasks.Count} complete of 657");
-            Console.WriteLine();
-            Console.WriteLine("Enter a task number to run that task:");
-            Console.WriteLine();
 
             while (true)
             {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"Currently there are {myTasks.Count} complete of 657");
+                Console.WriteLine("Enter a task number to run that task:");
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 usersInput = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.White;
                 RunTask(usersInput, myTasks);
+                Console.WriteLine();
+                Console.WriteLine("Press the enter/return key to continue...");
+                Console.ReadLine();
+                Console.Clear();
             }
 
         }

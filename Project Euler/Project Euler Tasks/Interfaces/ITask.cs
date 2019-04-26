@@ -1,4 +1,4 @@
-﻿namespace Project_Euler_Tasks
+﻿namespace Project_Euler_Tasks.Interfaces
 {
     public interface ITask
     {

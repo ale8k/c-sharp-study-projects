@@ -44,12 +44,12 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ITask.cs" />
-    <Compile Include="Task1.cs" />
-    <Compile Include="Task2.cs" />
-    <Compile Include="Task3.cs" />
-    <Compile Include="Task4.cs" />
-    <Compile Include="Task5.cs" />
+    <Compile Include="Interfaces\ITask.cs" />
+    <Compile Include="Tasks\Task1.cs" />
+    <Compile Include="Tasks\Task2.cs" />
+    <Compile Include="Tasks\Task3.cs" />
+    <Compile Include="Tasks\Task4.cs" />
+    <Compile Include="Tasks\Task5.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

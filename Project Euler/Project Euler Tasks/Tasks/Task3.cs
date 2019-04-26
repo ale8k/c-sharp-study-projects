@@ -1,6 +1,7 @@
 ﻿using System;
+using Project_Euler_Tasks.Interfaces;
 
-namespace Project_Euler_Tasks
+namespace Project_Euler_Tasks.Tasks
 {
     public class Task3 : ITask
     {
@@ -12,12 +13,13 @@ namespace Project_Euler_Tasks
 
             return this;
         }
-        
-       
+
         public void Run()
         {
 
             Console.WriteLine(Int64.MaxValue);
         }
+
     }
+
 }

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Project_Euler_Tasks.Interfaces;
 
-namespace Project_Euler_Tasks
+namespace Project_Euler_Tasks.Tasks
 {
     public class Task1 : ITask
     {
@@ -29,9 +30,11 @@ namespace Project_Euler_Tasks
             {
                 sum += i;
             }
+
             Console.WriteLine();
             Console.WriteLine($"The sum of all multiples of 3 and 5 in 1000 is {sum}");
-            Console.ReadLine();
         }
+
     }
+
 }
