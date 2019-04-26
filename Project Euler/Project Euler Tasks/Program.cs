@@ -32,7 +32,7 @@ namespace Project_Euler_Tasks
 
         public static void RunTask(int id, List<ITask> myTaskList)
         {
-            foreach(ITask task in myTaskList)
+            foreach (ITask task in myTaskList)
             {
                 if (task.TaskID == id)
                     task.ShowInfo().Run();

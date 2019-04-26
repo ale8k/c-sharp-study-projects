@@ -29,10 +29,9 @@ namespace Project_Euler_Tasks
             {
                 sum += i;
             }
+            Console.WriteLine();
             Console.WriteLine($"The sum of all multiples of 3 and 5 in 1000 is {sum}");
             Console.ReadLine();
         }
-
-
     }
 }
