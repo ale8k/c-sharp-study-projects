@@ -13,9 +13,7 @@ namespace Project_Euler_Tasks
         {
             int usersInput;
 
-            List<ITask> myTasks = new List<ITask>();
-            myTasks.Add(new Task1());
-            myTasks.Add(new Task2());
+            List<ITask> myTasks = GetTaskList();
 
             Console.WriteLine($"Currently there are {myTasks.Count} complete of 657");
             Console.WriteLine();
@@ -38,6 +36,19 @@ namespace Project_Euler_Tasks
                     task.ShowInfo().Run();
             }
 
+        }
+
+        private static List<ITask> GetTaskList()
+        {
+            List<ITask> list = new List<ITask>()
+            {
+                new Task1(),
+                new Task2(),
+                new Task3()
+            };
+
+            return list;
+            
         }
 
     }

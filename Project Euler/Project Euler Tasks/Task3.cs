@@ -12,9 +12,12 @@ namespace Project_Euler_Tasks
 
             return this;
         }
-
+        
+       
         public void Run()
         {
+
+            Console.WriteLine(Int64.MaxValue);
         }
     }
 }
