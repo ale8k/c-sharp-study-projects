@@ -23,6 +23,8 @@
 *.sbr
 *.sdf
 *.vs
+*.gitignore
+*.gitattributes
 ipch/
 obj/
 [Bb]in
