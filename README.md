@@ -24,5 +24,11 @@ This is a collaboration of small and medium study projects. Below is a list of t
   - [ ] Preprocessor Directives
   
 - **SQL**
-  - [ ] Placeholder
-  - [x] Placeholder
+  - [x] Understanding what a *relational* database is
+  - [x] Keys: Primary, Foreign and Unique keys understanding
+  - [x] CREATE DATABASE/SCHEMA NAME - creating a new database with SQL
+  - [x] CREATE TABLE NAME( /* table contents */ ) - creating tables in SQL
+  - [x]
+  - [x]
+  - [x]
+  - [x]
