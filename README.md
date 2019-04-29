@@ -13,6 +13,6 @@ LINQ to objects
 Nullable Types
 Dynamic
 Exception Handling
-Asynchronous Programming with Async / Await 
+- [ ] Asynchronous Programming with Async / Await 
 
 # SQL
