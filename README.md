@@ -24,3 +24,5 @@ This is a collaboration of small and medium study projects. Below is a list of t
   - [ ] Preprocessor Directives
   
 - **SQL**
+  - [ ] Placeholder
+  - [x] Placeholder
