@@ -29,5 +29,5 @@ This is a collaboration of small and medium study projects. Below is a list of t
   * - [x] CREATE TABLE NAME( /* table contents */ ) - creating tables in SQL
   * - [x] Keys: Primary, Foreign and Unique keys understanding
   * - [x] Other constraints: default & not null
-  * - Statements
-     [ ] test
+  *  Statements
+    * - gffg
