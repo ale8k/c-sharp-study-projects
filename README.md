@@ -10,6 +10,9 @@ This is a collaboration of small and medium study projects. Below is a list of t
   - [x] Events
   - [x] Extension Methods
   - [x] LINQ to objects
+  - [ ] LINQ to entities / Entity FR
+  - [ ] LINQ to SQL
+  - [ ] ADO.NET 
   - [x] Nullable Types
   - [x] Dynamic
   - [x] Exception Handling
