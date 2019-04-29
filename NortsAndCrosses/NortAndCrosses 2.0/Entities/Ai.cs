@@ -25,11 +25,11 @@ namespace NortAndCrosses_2._0.Entities
             // compare comp list, to game list, what pattern does comp have and is it available
             // in the game list to complete, if yes, choose this
             // if no, try next pattern
-
+            //
             // TODO: clean this logic up and implement
-
+            //
             // WITH comp input, use method below to just validate everything is ok for sure
-
+            //
             // does the input the computer has done exist in game map??
             // Perhaps have running brain object injected into this...
             GameInstance.ValidInputForMap(gameMap, 0); // something to think about
