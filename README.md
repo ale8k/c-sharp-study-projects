@@ -3,15 +3,20 @@ This is a collaboration of small and medium study projects. Below is a list of t
 
 - **C#**
   - [x] All C# basics ranging from generic syntax to polymorphic usage of interfaces
-  - Generics
-  - Delegates
-  - Lambda Expressions
-  - Events
-  - Extension Methods
-  - LINQ to objects
-  - Nullable Types
-  - Dynamic
-  - Exception Handling
-  - Asynchronous Programming with Async / Await 
-
-# SQL
+  - [x] Generics
+  - [x] Indexers
+  - [x] Delegates
+  - [x] Lambda Expressions
+  - [x] Events
+  - [x] Extension Methods
+  - [x] LINQ to objects
+  - [x] Nullable Types
+  - [x] Dynamic
+  - [x] Exception Handling
+  - [x] Asynchronous Programming with Async / Await 
+  - [x] .NET collections
+  - [ ] Attributes
+  - [ ] Multithreading
+  - [ ] Unsafe codes / Pointers*
+  
+- **SQL**
