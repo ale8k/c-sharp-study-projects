@@ -33,6 +33,12 @@ This is a collaboration of small and medium study projects. Below is a list of t
   * - [ ] INSERT statement
   * - [ ] UPDATE statement
   * - [ ] DELETE statement
+  * - [ ] MySQL Aggregate functions
+  * - [ ] SQL Joins
+  * - [ ] SQL Subqueries
+  * - [ ] SQL Self Join
+  * - [ ] SQL Views
+  * - [ ] Stored Routines
 
 - **C# Entity FR**
   * Not started
