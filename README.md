@@ -30,7 +30,7 @@ This is a collaboration of small and medium study projects. Below is a list of t
   * - [x] Keys: Primary, Foreign and Unique keys understanding
   * - [x] Other constraints: default & not null
   -  Statements
-    - SELECT:
+         - SELECT:
     - INSERT:
     - UPDATE:
     - DELETE:
