@@ -35,8 +35,8 @@ This is a collaboration of small and medium study projects. Below is a list of t
   * - [ ] DELETE statement
 
 - **C# Entity FR**
- * - Not started
+  * - Not started
 
 - **C# ASP.NET CORE / MVC**
- * - Not started
+  * - [ ]Not started
  
