@@ -21,5 +21,6 @@ This is a collaboration of small and medium study projects. Below is a list of t
   - [ ] Attributes
   - [ ] Multithreading
   - [ ] Unsafe codes / Pointers*
+  - [ ] Preprocessor Directives
   
 - **SQL**
