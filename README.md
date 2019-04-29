@@ -5,8 +5,8 @@ This is a collaboration of small and medium study projects. Below is a list of t
 - All C# basics ranging from generic syntax to polymorphic usage of interfaces
 
 * Generics
-Delegates
-Lambda Expressions
+* Delegates
+ * Lambda Expressions
 Events
 Extension Methods
 LINQ to objects
