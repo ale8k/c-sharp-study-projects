@@ -36,7 +36,7 @@ Below is a list of technologies I have learnt and the areas I have studied withi
   * - [x] CREATE TABLE NAME( /* table contents */ ) - creating tables in SQL
   * - [x] Keys: Primary, Foreign and Unique keys understanding
   * - [x] Other constraints: default & not null
-  * - [ ] SELECT statement
+  * - [x] SELECT statement
   * - [ ] INSERT statement
   * - [ ] UPDATE statement
   * - [ ] DELETE statement
