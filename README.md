@@ -3,8 +3,10 @@
 ## Introduction
 The purpose of this large all-in-one projects repo is to demonstrate the tech I have learnt along the way with live project examples to substantiate this. It is like a 'proof of concept' so to speak.
 
+
 ## Tech learnt / used in the projects
 Below is a list of technologies I have learnt and the areas I have studied within the study project, as well as areas I intend to study and whether I have or haven't determined by a check mark.
+
 
 - **C#**
   * - [x] All C# basics ranging from generic syntax to polymorphic usage of interfaces
