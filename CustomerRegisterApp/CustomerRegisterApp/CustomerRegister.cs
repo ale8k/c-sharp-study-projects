@@ -33,8 +33,11 @@ namespace CustomerRegisterApp
                 Console.WriteLine("Please enter a command:");
                 usersInput = Console.ReadLine();
                 cli.ValidateUsersInput(usersInput); // validates if input is a command name
-
-                
+                if (cli.InputIsValid) // property to check input
+                {
+                    Console.Clear();
+                    Console.WriteLine("valid");
+                }
             }
         }
     }

@@ -10,7 +10,7 @@ namespace CustomerRegisterApp.CLI
     public class CustomerRegisterCLI
     {
         private readonly List<ICommand> _commandList;
-        private bool _isInputValid;
+        public bool InputIsValid { get; private set; }
 
         public CustomerRegisterCLI()
         {
@@ -23,9 +23,9 @@ namespace CustomerRegisterApp.CLI
         public void ValidateUsersInput(string input)
         {
             if (IsInputAValidCommand(input))
-                Console.WriteLine("valid");
+                InputIsValid = true;
             else
-                _isInputValid = false;
+                InputIsValid = false;
         }
 
         private bool IsInputAValidCommand(string input)
