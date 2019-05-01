@@ -1,4 +1,9 @@
 ﻿using System.IO;
+
+/*
+ * Manages directories and files
+ */
+
 namespace CustomerRegisterApp
 {
     public class FileManager
@@ -9,7 +14,6 @@ namespace CustomerRegisterApp
         public FileManager()
         {
             _fi = new FileInfo(path);
-
             CreateDirectory(path);
         }
 
