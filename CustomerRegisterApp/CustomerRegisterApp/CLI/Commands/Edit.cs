@@ -16,11 +16,8 @@ namespace CustomerRegisterApp.CLI.Commands
             Console.WriteLine("First name: 'first name', second name: 'second name', Mobile: 'tel' or Date of birth: 'dob'");
             int area = GetAreaToEdit();
             Console.WriteLine(area);
-            // select file to edit
-            // select firstname, secondname, w/e to update
-            // update it
-            // save
-            // display it - done
+            // split file into sub strings at the |
+            // edit area according to array index, done. fappy hays
         }
 
         private int GetAreaToEdit()
@@ -48,7 +45,7 @@ namespace CustomerRegisterApp.CLI.Commands
                 input = Console.ReadLine().ToLower();
             }
             return 0;
-
         }
+
     }
 }
