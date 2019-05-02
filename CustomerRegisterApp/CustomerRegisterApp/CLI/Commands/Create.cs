@@ -31,35 +31,9 @@ namespace CustomerRegisterApp.CLI.Commands
 
         private void CreateFileIfDoesNotExist()
         {
-            // default method to increment each customer by 1
             string path = _path + $@"\Customer{Directory.GetFiles(_path).Length}.txt";
-            // Create a file to write to.
             StreamWriter sw = File.CreateText(path);
             sw.Dispose();
         }
-        private string GetAndValidateUserInput()
-        {
-            // did not have time to learn c# regex lib, as such this is done manually
-
-            string input;
-            while (true)
-            {
-                input = Console.ReadLine();
-                if (input.Contains(@"/") || input.Contains(@"\"))
-                    Console.WriteLine(@"File names cannot contain '\' or '/'");
-                else
-                    return input;
-            }
-        }
-
-        private void CreateFileIfDoesNotExist(string fileName)
-        {
-            // alternative method to create custom names
-            string path = $@"{_path}\{fileName}.txt";
-            // Create a file to write to.
-            StreamWriter sw = File.CreateText(path);
-            sw.Dispose();
-        }
-
     }
 }

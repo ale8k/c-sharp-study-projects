@@ -46,9 +46,7 @@
     <Compile Include="CLI\Commands\Create.cs" />
     <Compile Include="CLI\CustomerRegisterCLI.cs" />
     <Compile Include="CLI\Commands\ICommand.cs" />
-    <Compile Include="CLI\Commands\Delete.cs" />
     <Compile Include="CustomerRegister.cs" />
-    <Compile Include="FileManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
