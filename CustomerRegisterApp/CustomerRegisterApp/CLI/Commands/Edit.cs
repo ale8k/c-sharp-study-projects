@@ -27,6 +27,7 @@ namespace CustomerRegisterApp.CLI.Commands
                 {
                     string newInput = GetNewInputForArea(_areaToEdit);
                     UpdateFile(_fi, _areaToEdit, newInput);
+                    Console.WriteLine(_fi.FullName);
                 }
             }
         }
@@ -63,7 +64,7 @@ namespace CustomerRegisterApp.CLI.Commands
                         correctInput = true;
                         return 4;
                 }
-
+                Console.WriteLine("That is not a valid area to edit, try again");
                 input = Console.ReadLine().ToLower();
             }
             return 0;
@@ -71,14 +72,19 @@ namespace CustomerRegisterApp.CLI.Commands
 
         private string GetNewInputForArea(int areaToEdit)
         {
+            string customerID = _fi.Name.Substring(8, 1);
+
             switch (areaToEdit)
             {
                 case 1:
                 case 2:
+                    Console.WriteLine($"Please enter a new first/last name for Customer{customerID}");
                     return CustomerBuilder.GetValidCustomerName();
                 case 3:
+                    Console.WriteLine($"Please enter a new mobile numberfor Customer{customerID}");
                     return CustomerBuilder.GetValidCustomerTelNum();
                 case 4:
+                    Console.WriteLine($"Please enter a new date of birth (DD/MM/YY) for Customer{customerID}");
                     return CustomerBuilder.GetValidDOB().ToString();
             }
             return "";
@@ -86,10 +92,20 @@ namespace CustomerRegisterApp.CLI.Commands
 
         private void UpdateFile(FileInfo FI, int areaToEdit, string updatedText)
         {
-            // split file into sub strings at the |
-            // edit area according to array index, done. fappy hays
-            // need to get the shit out of fi and turn into sub strings, then, depending on area to edit
-            // change that substring
+            StreamReader streamReader = FI.OpenText();
+            string previousText = streamReader.ReadLine();
+            string previousTextPath = FI.FullName;
+            streamReader.Close();
+
+            File.Delete(FI.FullName);
+
+            string[] prevArr = previousText.Split(',');
+            prevArr[areaToEdit - 1] = updatedText;
+            string newString = string.Join(", ", prevArr);
+
+            StreamWriter sw = File.CreateText(previousTextPath);
+            sw.WriteLine(newString);
+            sw.Close();
 
         }
 

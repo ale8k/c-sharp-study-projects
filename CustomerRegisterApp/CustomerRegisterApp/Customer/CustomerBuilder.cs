@@ -17,7 +17,7 @@ namespace CustomerRegisterApp.Customer
             Console.WriteLine("Enter customers date of birth in format: DD/MM/YYYY");
             string dob = GetValidDOB().ToString();
 
-            return $"First name: {firstName}, Last name: {secondName}, Tel: {number}, DOB: {dob}";
+            return $"{firstName}, {secondName}, {number}, {dob}";
         }
 
         public static string GetValidCustomerName()
