@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
 namespace CustomerRegisterApp.Customer
 {
     public static class CustomerBuilder
     {
-        private static readonly StringBuilder sb = new StringBuilder();
         public static string GetCustomerDetails()
         {
             Console.WriteLine("Enter customers first name:");
@@ -21,7 +17,7 @@ namespace CustomerRegisterApp.Customer
             Console.WriteLine("Enter customers date of birth in format: DD/MM/YYYY");
             string dob = GetValidDOB().ToString();
 
-            return "ggdfgsdfgayas";
+            return $"First name: {firstName}, Last name: {secondName}, Tel: {number}, DOB: {dob}";
         }
 
         private static string GetValidCustomerName()

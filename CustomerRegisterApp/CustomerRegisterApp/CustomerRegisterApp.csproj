@@ -44,10 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CLI\Commands\Create.cs" />
+    <Compile Include="CLI\Commands\Edit.cs" />
     <Compile Include="CLI\CustomerRegisterCLI.cs" />
     <Compile Include="CLI\Commands\ICommand.cs" />
     <Compile Include="CustomerRegister.cs" />
     <Compile Include="Customer\CustomerBuilder.cs" />
+    <Compile Include="Customer\CustomerEditor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

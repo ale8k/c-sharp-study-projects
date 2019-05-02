@@ -42,6 +42,7 @@ namespace CustomerRegisterApp.CLI.Commands
         {
             StreamWriter sw = File.CreateText(path);
             string customerString = CustomerBuilder.GetCustomerDetails();
+            Console.WriteLine(customerString);
             sw.WriteLine(customerString);
             sw.Dispose();
         }
