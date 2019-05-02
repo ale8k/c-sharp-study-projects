@@ -10,6 +10,7 @@ namespace CustomerRegisterApp.CLI
     public class CustomerRegisterCLI
     {
         private readonly List<ICommand> _commandList;
+        private ICommand _currentCommand;
         public bool InputIsValid { get; private set; }
 
         public CustomerRegisterCLI()
@@ -28,12 +29,21 @@ namespace CustomerRegisterApp.CLI
                 InputIsValid = false;
         }
 
+        public void CallCommand(string input)
+        {
+            if (_currentCommand.CommandName == input.ToLower())
+                _currentCommand.RunCommand();
+        }
+
         private bool IsInputAValidCommand(string input)
         {
             foreach (ICommand command in _commandList)
             {
                 if (input.ToLower() == command.CommandName)
+                {
+                    _currentCommand = command;
                     return true;
+                }
             }
 
             return false;

@@ -7,5 +7,6 @@ namespace CustomerRegisterApp.CLI.Commands
     public interface ICommand
     {
         string CommandName { get; }
+        void RunCommand();
     }
 }
