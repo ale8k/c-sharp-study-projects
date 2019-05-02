@@ -17,7 +17,8 @@ namespace CustomerRegisterApp.CLI
         {
             _commandList = new List<ICommand>() {
                 new Create(),
-                new Edit()
+                new Edit(),
+                new View()
             };
         }
 
