@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text.RegularExpressions;
+using CustomerRegisterApp.Customer;
 
 /*
  * A command of the CLI for creating new customer files & creates the initial director
@@ -20,8 +21,10 @@ namespace CustomerRegisterApp.CLI.Commands
 
         public void RunCommand()
         {
+            string path = _path + $@"\Customer{Directory.GetFiles(_path).Length}.txt";
             CreateDirectoryIfDoesNotExist();
-            CreateFileIfDoesNotExist();
+            CreateFileIfDoesNotExist(path);
+            EditFileIfExists(path);
         }
         private void CreateDirectoryIfDoesNotExist()
         {
@@ -29,11 +32,19 @@ namespace CustomerRegisterApp.CLI.Commands
                 Directory.CreateDirectory(_path);
         }
 
-        private void CreateFileIfDoesNotExist()
+        private void CreateFileIfDoesNotExist(string path)
         {
-            string path = _path + $@"\Customer{Directory.GetFiles(_path).Length}.txt";
             StreamWriter sw = File.CreateText(path);
             sw.Dispose();
         }
+
+        private void EditFileIfExists(string path)
+        {
+            StreamWriter sw = File.CreateText(path);
+            string customerString = CustomerBuilder.GetCustomerDetails();
+            sw.WriteLine(customerString);
+            sw.Dispose();
+        }
+
     }
 }
