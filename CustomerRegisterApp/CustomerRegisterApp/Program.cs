@@ -19,7 +19,7 @@ using System.Threading.Tasks;
  •	Telephone; 
  •	Date of birth; 
  •	Age; and, 
- •	The background colour for each row should be set depending on the customer’s display name.
+ •	The background colour for each row should be set depending o the customer’s display name.
     The colour should be unique for customers with different display names (even if there are hundreds of customers)
     and the same for customers with exactly the same name. 
  */

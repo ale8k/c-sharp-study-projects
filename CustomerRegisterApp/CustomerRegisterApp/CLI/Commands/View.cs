@@ -13,6 +13,9 @@ namespace CustomerRegisterApp.CLI.Commands
 
         public void RunCommand()
         {
+            // for colour idea, create hashcode based on file content then assign colour
+            // to hashcode, store each hash code in dictionary with corresponding colours
+            // done?
             string[] files = Directory.GetFiles("Customers");
 
             foreach (string file in files)
@@ -23,5 +26,6 @@ namespace CustomerRegisterApp.CLI.Commands
                 }
             }
         }
+
     }
 }
