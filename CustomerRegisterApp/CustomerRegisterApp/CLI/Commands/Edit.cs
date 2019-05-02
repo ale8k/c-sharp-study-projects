@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using CustomerRegisterApp.Customer;
 
 namespace CustomerRegisterApp.CLI.Commands
 {
@@ -19,7 +20,13 @@ namespace CustomerRegisterApp.CLI.Commands
             Console.WriteLine("First name: 'first name', second name: 'second name', Mobile: 'tel' or Date of birth: 'dob'");
             _areaToEdit = GetAreaToEdit();
 
-            EditFileArea(_fi, _areaToEdit);
+            if (_areaToEdit >= 1 && _areaToEdit <= 4)
+            {
+                string newInput = GetNewInputForArea(_areaToEdit);
+                UpdateFile(_fi, _areaToEdit, newInput);
+            }
+
+
         }
         private void GetFileToEdit(string ID)
         {
@@ -55,7 +62,22 @@ namespace CustomerRegisterApp.CLI.Commands
             return 0;
         }
 
-        private void EditFileArea(FileInfo FI, int areaToEdit)
+        private string GetNewInputForArea(int areaToEdit)
+        {
+            switch (areaToEdit)
+            {
+                case 1:
+                case 2:
+                    return CustomerBuilder.GetValidCustomerName();
+                case 3:
+                    return CustomerBuilder.GetValidCustomerTelNum();
+                case 4:
+                    return CustomerBuilder.GetValidDOB().ToString();
+            }
+            return "";
+        }
+
+        private void UpdateFile(FileInfo FI, int areaToEdit, string updatedText)
         {
             // split file into sub strings at the |
             // edit area according to array index, done. fappy hays

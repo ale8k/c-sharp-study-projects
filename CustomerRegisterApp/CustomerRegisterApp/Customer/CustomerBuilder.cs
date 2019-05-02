@@ -20,7 +20,7 @@ namespace CustomerRegisterApp.Customer
             return $"First name: {firstName}, Last name: {secondName}, Tel: {number}, DOB: {dob}";
         }
 
-        private static string GetValidCustomerName()
+        public static string GetValidCustomerName()
         {
             string input;
             Regex regexItem = new Regex("[0-9!@+\\#$%^&*(),.?\":{}|<>]");
@@ -38,7 +38,7 @@ namespace CustomerRegisterApp.Customer
             }
         }
 
-        private static string GetValidCustomerTelNum()
+        public static string GetValidCustomerTelNum()
         {
             string input;
             Regex regexItem = new Regex("[a-zA-Z!@#$%^&*(),.?\":{}|<>]");
@@ -55,7 +55,7 @@ namespace CustomerRegisterApp.Customer
             }
         }
 
-        private static string GetValidDOB()
+        public static string GetValidDOB()
         {
             string input = Console.ReadLine();
             while (true)
