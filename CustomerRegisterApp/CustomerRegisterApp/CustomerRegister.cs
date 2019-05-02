@@ -31,7 +31,7 @@ namespace CustomerRegisterApp
                 usersInput = Console.ReadLine();
                 cli.ValidateUsersInput(usersInput); // validates if input is a command name
                 if (cli.InputIsValid) // property to check input
-                    cli.CallCommand(usersInput); // call command if input is golden
+                    cli.CallCommand(); // call command if input is golden
                 else
                     Console.WriteLine("Sorry, that is not a command.");
             }

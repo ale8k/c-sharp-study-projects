@@ -9,17 +9,14 @@ namespace CustomerRegisterApp.CLI
 {
     public class CustomerRegisterCLI
     {
-        private readonly FileManager _fm;
         private readonly List<ICommand> _commandList;
         private ICommand _currentCommand;
         public bool InputIsValid { get; private set; }
 
         public CustomerRegisterCLI()
         {
-            _fm = new FileManager();
-
             _commandList = new List<ICommand>() {
-                new Create(_fm),
+                new Create(),
                 new Delete()
             };
         }
@@ -32,10 +29,9 @@ namespace CustomerRegisterApp.CLI
                 InputIsValid = false;
         }
 
-        public void CallCommand(string input)
+        public void CallCommand()
         {
-            if (_currentCommand.CommandName == input.ToLower())
-                _currentCommand.RunCommand();
+            _currentCommand.RunCommand();
         }
 
         private bool IsInputAValidCommand(string input)

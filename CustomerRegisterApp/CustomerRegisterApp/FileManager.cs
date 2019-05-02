@@ -3,7 +3,7 @@
 /*
  * Manages directories and files
  */
-
+ /*
 namespace CustomerRegisterApp
 {
     public class FileManager
@@ -17,10 +17,15 @@ namespace CustomerRegisterApp
             CreateDirectory(path);
         }
 
+        public FileInfo UseFileInfo()
+        {
+            return _fi;
+        }
+
         private void CreateDirectory(string path)
         {
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
         }
     }
-}
+}*/
