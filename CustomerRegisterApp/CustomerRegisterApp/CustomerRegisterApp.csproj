@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="CLI\Commands\Create.cs" />
     <Compile Include="CLI\Commands\Edit.cs" />
+    <Compile Include="CLI\Commands\View.cs" />
     <Compile Include="CLI\CustomerRegisterCLI.cs" />
     <Compile Include="CLI\Commands\ICommand.cs" />
     <Compile Include="CustomerRegister.cs" />
