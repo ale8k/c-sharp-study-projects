@@ -29,6 +29,8 @@ Below is a list of technologies I have learnt and the areas I have studied withi
   * - [ ] Multithreading
   * - [ ] Unsafe codes / Pointers*
   * - [ ] Preprocessor Directives
+  * - [x] System.IO
+  * - [x] System.Text.RegularExpressions (only briefly)
   
 - **SQL**
   * - [x] Understanding what a *relational* database is, DBMS and general peripheral understansding
