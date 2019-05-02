@@ -8,31 +8,38 @@ namespace CustomerRegisterApp.CLI.Commands
     {
         private FileInfo _fi;
         private int _areaToEdit;
-        
+        private bool _fileExists;
+
         public string CommandName { get; } = "edit";
 
         public void RunCommand()
         {
             Console.WriteLine("Enter the customer ID of the customer you would like to edit: (e.g., 2)");
-            GetFileToEdit(Console.ReadLine());
+            _fileExists = GetFileToEdit(Console.ReadLine());
 
-            Console.WriteLine("Please enter area you would like edit in the file:");
-            Console.WriteLine("First name: 'first name', second name: 'second name', Mobile: 'tel' or Date of birth: 'dob'");
-            _areaToEdit = GetAreaToEdit();
-
-            if (_areaToEdit >= 1 && _areaToEdit <= 4)
+            if (_fileExists)
             {
-                string newInput = GetNewInputForArea(_areaToEdit);
-                UpdateFile(_fi, _areaToEdit, newInput);
+                Console.WriteLine("Please enter area you would like edit in the file:");
+                Console.WriteLine("First name: 'first name', second name: 'second name', Mobile: 'tel' or Date of birth: 'dob'");
+                _areaToEdit = GetAreaToEdit();
+
+                if (_areaToEdit >= 1 && _areaToEdit <= 4)
+                {
+                    string newInput = GetNewInputForArea(_areaToEdit);
+                    UpdateFile(_fi, _areaToEdit, newInput);
+                }
             }
-
-
         }
-        private void GetFileToEdit(string ID)
+        private bool GetFileToEdit(string ID)
         {
             FileInfo fi = new FileInfo(Path.GetFullPath($@"Customers\Customer{ID}.txt"));
             if (fi.Exists)
+            {
                 _fi = fi;
+                return true;
+            }
+            Console.WriteLine($"Cannot find customer {ID}");
+            return false;
         }
 
         private int GetAreaToEdit()
