@@ -25,6 +25,9 @@ namespace CustomerRegisterApp.CLI.Commands
             CreateDirectoryIfDoesNotExist();
             CreateFileIfDoesNotExist(path);
             EditFileIfExists(path);
+            Console.WriteLine("Customer successfully created, press enter to continue...");
+            Console.ReadLine();
+            Console.Clear();
         }
         private void CreateDirectoryIfDoesNotExist()
         {

@@ -16,7 +16,8 @@ namespace CustomerRegisterApp.CLI
         public CustomerRegisterCLI()
         {
             _commandList = new List<ICommand>() {
-                new Create()
+                new Create(),
+                new Edit()
             };
         }
 
