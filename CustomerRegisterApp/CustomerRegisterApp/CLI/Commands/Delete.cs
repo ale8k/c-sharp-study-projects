@@ -6,8 +6,13 @@ namespace CustomerRegisterApp.CLI.Commands
 {
     public class Delete : ICommand
     {
+        private FileManager _fm;
         public string CommandName { get; } = "delete";
 
+        public Delete(FileManager FM)
+        {
+            _fm = FM;
+        }
         public void RunCommand()
         {
             System.Console.Clear();

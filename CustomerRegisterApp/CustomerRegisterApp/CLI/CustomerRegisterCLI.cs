@@ -9,14 +9,17 @@ namespace CustomerRegisterApp.CLI
 {
     public class CustomerRegisterCLI
     {
+        private readonly FileManager _fm;
         private readonly List<ICommand> _commandList;
         private ICommand _currentCommand;
         public bool InputIsValid { get; private set; }
 
         public CustomerRegisterCLI()
         {
+            _fm = new FileManager();
+
             _commandList = new List<ICommand>() {
-                new Create(),
+                new Create(_fm),
                 new Delete()
             };
         }

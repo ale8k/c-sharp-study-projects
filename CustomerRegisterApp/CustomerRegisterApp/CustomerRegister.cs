@@ -11,20 +11,17 @@ namespace CustomerRegisterApp
 {
     public class CustomerRegister
     {
-        private readonly FileManager _fm;
         private readonly CustomerRegisterCLI _cli;
 
         public CustomerRegister()
         {
-            _fm = new FileManager();
             _cli = new CustomerRegisterCLI();
-            CreateInstance(_cli, _fm);
+            CreateInstance(_cli);
         }
 
-        private void CreateInstance(CustomerRegisterCLI CLI, FileManager FM)
+        private void CreateInstance(CustomerRegisterCLI CLI)
         {
             CustomerRegisterCLI cli = CLI;
-            FileManager fm = FM;
 
             string usersInput;
 
