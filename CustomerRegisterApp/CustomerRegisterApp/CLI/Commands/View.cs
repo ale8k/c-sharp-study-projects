@@ -22,6 +22,7 @@ namespace CustomerRegisterApp.CLI.Commands
             {
                 using (StreamReader sr = new StreamReader(file))
                 {
+                    // Git change
                     Console.WriteLine(sr.ReadLine());
                 }
             }
