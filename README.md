@@ -30,6 +30,7 @@ Below is a list of technologies I have learnt and the areas I have studied withi
   * - [ ] Unsafe codes / Pointers*
   * - [ ] Preprocessor Directives
   * - [x] System.IO
+  * - [x] Streams and buffers (general understanding)
   * - [x] System.Text.RegularExpressions (only briefly)
   
 - **SQL**
