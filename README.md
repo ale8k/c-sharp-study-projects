@@ -16,7 +16,7 @@ Below is a list of technologies I have learnt and the areas I have studied withi
   * - [x] Lambda Expressions
   * - [x] Events
   * - [x] Extension Methods
-  * - [x] LINQ to objects
+  * - [x] LINQ to objects (Decent understanding)
   * - [ ] LINQ to entities / Entity FR
   * - [ ] LINQ to SQL
   * - [ ] ADO.NET 
