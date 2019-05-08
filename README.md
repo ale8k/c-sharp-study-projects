@@ -40,6 +40,7 @@ Below is a list of technologies I have learnt and the areas I have studied withi
   * - [x] Keys: Primary, Foreign and Unique keys understanding
   * - [x] Other constraints: default & not null
   * - [x] SELECT statement
+    * test
   * - [ ] INSERT statement
   * - [ ] UPDATE statement
   * - [ ] DELETE statement
