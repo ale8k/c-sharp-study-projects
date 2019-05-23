@@ -41,9 +41,9 @@ Below is a list of technologies I have learnt and the areas I have studied withi
   * - [x] Other constraints: default & not null
   * - [ ] SELECT statement & related statements
     * - [x] FROM
-    * - [ ] WHERE
-    * - [ ] AND
-    * - [ ] OR
+    * - [x] WHERE
+    * - [x] AND
+    * - [x] OR
     * - [ ] IN
     * - [ ] LIKE - NOT LIKE
     * - [ ] BETWEEN - AND 
