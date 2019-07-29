@@ -25,10 +25,10 @@ Below is a list of technologies I have learnt and the areas I have studied withi
   * - [x] Exception Handling
   * - [x] Asynchronous Programming with Async / Await 
   * - [x] .NET collections
-  * - [ ] Attributes
+  * - [x] Attributes
   * - [ ] Multithreading
   * - [ ] Unsafe codes / Pointers*
-  * - [ ] Preprocessor Directives
+  * - [x] Preprocessor Directives
   * - [x] System.IO
   * - [x] Streams and buffers (general understanding)
   * - [x] System.Text.RegularExpressions (only briefly)
@@ -44,20 +44,20 @@ Below is a list of technologies I have learnt and the areas I have studied withi
     * - [x] WHERE
     * - [x] AND
     * - [x] OR
-    * - [ ] IN
-    * - [ ] LIKE - NOT LIKE
-    * - [ ] BETWEEN - AND 
-    * - [ ] IS NOT NULL - IS NULL
+    * - [x] IN
+    * - [x] LIKE - NOT LIKE
+    * - [x] BETWEEN - AND 
+    * - [x] IS NOT NULL - IS NULL
     * - [ ] SELECT DISTINCT
-    * - [ ] SELECT ORDERBY
+    * - [x] SELECT ORDERBY
     * - [ ] GROUP BY
     * - [ ] HAVING
     * - [ ] LIMIT
-  * - [ ] INSERT statement
-  * - [ ] UPDATE statement
-  * - [ ] DELETE statement
+  * - [x] INSERT statement
+  * - [x] UPDATE statement
+  * - [x] DELETE statement
   * - [ ] MySQL Aggregate functions
-  * - [ ] SQL Joins
+  * - [x] SQL Joins
   * - [ ] SQL Subqueries
   * - [ ] SQL Self Join
   * - [ ] SQL Views
