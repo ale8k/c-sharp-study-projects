@@ -26,7 +26,7 @@ Below is a list of technologies I have learnt and the areas I have studied withi
   * - [x] Asynchronous Programming with Async / Await 
   * - [x] .NET collections
   * - [x] Attributes
-  * - [ ] Multithreading
+  * - [x] Multithreading
   * - [ ] Unsafe codes / Pointers*
   * - [x] Preprocessor Directives
   * - [x] System.IO
@@ -50,7 +50,7 @@ Below is a list of technologies I have learnt and the areas I have studied withi
     * - [x] IS NOT NULL - IS NULL
     * - [ ] SELECT DISTINCT
     * - [x] SELECT ORDERBY
-    * - [ ] GROUP BY
+    * - [x] GROUP BY
     * - [ ] HAVING
     * - [ ] LIMIT
   * - [x] INSERT statement
